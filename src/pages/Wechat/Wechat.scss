@@ -1,0 +1,64 @@
+@import "../../asset/css/util";
+
+.wechat-page {
+  .return {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+  }
+  .wechat-item {
+    position: relative;
+    width: 100%;
+    height: 113px;
+    background: url(./images/wechat-item.jpg) no-repeat;
+    background-size: cover;
+    .wechat-item-avatar {
+      position: absolute;
+      width: 93px;
+      height: 93px;
+      top: 10px;
+      left: 20px;
+    }
+    .wechat-item-text {
+      color: rgb(127, 127, 127);
+      font-size: 30px;
+      font-family: FZKaTong;
+      position: absolute;
+      height: 113px;
+      transform: rotate(0deg);
+      left: 640px;
+      width: 417px;
+      p {
+        position: absolute;
+      }
+      .top-text {
+        top: 21px;
+      }
+      .bottom-text {
+        top: 57px;
+      }
+      .middle-text {
+        top: 38px;
+      }
+    }
+    .wechat-item-animate-1 {
+      @include animation(wechat-item-animate 0.5s 0.2s ease forwards);
+    }
+    .wechat-item-animate-2 {
+      @include animation(wechat-item-animate 0.5s 0.7s ease forwards);
+    }
+    .wechat-item-animate-3 {
+      @include animation(wechat-item-animate 0.5s 1.2s ease forwards);
+    }
+    @keyframes wechat-item-animate {
+      from {
+        @include transform(translate3d(0, 0, 0));
+        left: 640px;
+      }
+      to {
+        @include transform(translate3d(0, 0, 0));
+        left: 124px;
+      }
+    }
+  }
+}

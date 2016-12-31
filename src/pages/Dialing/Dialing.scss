@@ -1,0 +1,42 @@
+@import "../../asset/css/util";
+
+.dialing-page {
+  .dialing-item {
+    position: absolute;
+    left: 640px;
+    width: 100%;
+    p {
+      position: absolute;
+      font-size: 28px;
+      font-family: FZKaTong;
+      top: 15px;
+      left: 48px;
+      color: rgb(51, 51, 51);
+    }
+  }
+  .dialing-item-1 {
+    top: 81px;
+    @include animation(dialing-item-animate 0.6s 0.2s ease-out forwards);
+  }
+
+  .dialing-item-2 {
+    top: 175px;
+    @include animation(dialing-item-animate 0.6s 0.8s ease-out forwards);
+  }
+
+  @keyframes dialing-item-animate {
+    from {
+      @include transform(translate3d(0, 0, 0));
+      left: 640px;
+    }
+    to {
+      @include transform(translate3d(0, 0, 0));
+      left: 0;
+    }
+  }
+  .return {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+  }
+}

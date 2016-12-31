@@ -1,0 +1,27 @@
+.music {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 2;
+
+  i {
+    width: 48px;
+    height: 48px;
+    display: block;
+    position: absolute;
+  }
+  .music-icon {
+    background: url(./images/music.png) no-repeat;
+  }
+  .circle-1 {
+    background: url(./images/circle-1.png) no-repeat;
+  }
+  .circle-2 {
+    background: url(./images/circle-2.png) no-repeat;
+  }
+  .circle-3 {
+    background: url(./images/circle-3.png) no-repeat;
+  }
+}
