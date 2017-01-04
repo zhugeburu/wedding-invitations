@@ -11,6 +11,11 @@
   src: url('../font/ZHSRXT.ttf');
 }
 
+@font-face {
+  font-family: FZShouJinShu;
+  src: url('../font/FZShouJinShu.ttf');
+}
+
 body {
   font-size: 14px;
 }
@@ -27,6 +32,10 @@ html, body, #app, #root, #index-page-box {
 article, aside, blockquote, body, button, code, dd, details, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, input, legend, li, menu, nav, ol, p, pre, section, td, textarea, th, ul {
   padding: 0;
   margin: 0;
+}
+
+div {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .full-page {
@@ -66,35 +75,11 @@ article, aside, blockquote, body, button, code, dd, details, div, dl, dt, fields
   display: none;
 }
 
-/*背景大图*/
-.bg-img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-/*背景大图动画*/
-.bg-img-animation {
-  @include animation(bg-img-animation 10s infinite);
-}
-
-@keyframes bg-img-animation {
-  50% {
-    @include transform(scale(1.3))
-  }
-  100% {
-    @include transform(scale(1))
-  }
-}
-
 /*App.js页面切换动画*/
 
 .page-change-enter {
   opacity: 0.01;
-  transition: opacity .5s ease-in;
+  transition: opacity .5s ease-out;
 }
 
 .page-change-enter.page-change-enter-active {
@@ -103,7 +88,7 @@ article, aside, blockquote, body, button, code, dd, details, div, dl, dt, fields
 
 .page-change-leave {
   opacity: 1;
-  transition: opacity .5s ease-in;
+  transition: opacity .3s ease-out;
 }
 
 .page-change-leave.page-change-leave-active {

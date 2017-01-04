@@ -3,8 +3,8 @@
 .dialing-page {
   .dialing-item {
     position: absolute;
-    left: 640px;
     width: 100%;
+    @include transform(translateX(640px));
     p {
       position: absolute;
       font-size: 28px;
@@ -26,12 +26,10 @@
 
   @keyframes dialing-item-animate {
     from {
-      @include transform(translate3d(0, 0, 0));
-      left: 640px;
+      @include transform(translateX(640px));
     }
     to {
-      @include transform(translate3d(0, 0, 0));
-      left: 0;
+      @include transform(translateX(0px));
     }
   }
   .return {

@@ -25,20 +25,38 @@ export default class Bless extends Component {
 
     componentDidMount() {
         this.props.getBless();
+        /*防止软键盘弹出 挤压屏幕*/
+        document.getElementsByTagName('html')[0].style.height = document.body.clientHeight + 'px';
+    }
+
+    _restText() {
+        this.refs.blessName.value = '';
+        this.refs.blessText.value = '';
     }
 
     _commitBless() {
+        if (this.props.committing) {
+            return;
+        }
         const name = this.refs.blessName.value;
         const text = this.refs.blessText.value;
         if (name == '') {
             alert('留下你的大名~~');
             return;
         }
+        if (name.length > 24) {
+            alert('你名字填短点吧，放不下了~');
+            return;
+        }
         if (text == '') {
             alert('说点什么吧~亲。');
             return;
         }
-        this.props.commitBless(name, text);
+        if (text.length > 200) {
+            alert('祝福最多200个字，太多了放不下啊~');
+            return;
+        }
+        this.props.commitBless(name, text, ()=>this._restText());
     }
 
     render() {
@@ -46,14 +64,14 @@ export default class Bless extends Component {
             const itemClassName = index % 2 == 0 ? "bless-item bless-item-left" : "bless-item bless-item-right";
             return (
                 <div className={itemClassName} key={index}>
-                    姓名：{item.name}（{item.date}）
+                    姓名：{item.name}（{item.time}）
                     <br />
-                    祝福：{item.bless}
+                    祝福：{item.text}
                 </div>
             );
         });
         return (
-            <div className={this.props.show ? "bless" : "hidden"}>
+            <div className="bless">
                 <div className="top-box">
                     <div className="left-box">
                         <input type="text" className="bless-name" ref="blessName" placeholder="请输入姓名"/>

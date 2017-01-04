@@ -5,7 +5,7 @@
 import React, {Component} from 'react';
 import './Wechat.scss';
 import {browserHistory} from 'react-router';
-
+import BgImg from '../../components/BgImg/BgImg';
 import Back from '../../components/Back/Back';
 
 const bgImg = require('./images/bg.jpg');
@@ -59,17 +59,16 @@ export default class Wechat extends Component {
     render() {
         return (
             <div className="full-page wechat-page">
-                <img src={bgImg} className="bg-img"/>
+                <BgImg src={bgImg} animate={false}/>
                 <WechatItem avatar={boyImg} topText={'新郎'} bottomText={'语音消息'} animateClass={'wechat-item-animate-1'}
                             click={()=>this._playBoyAudio()}/>
                 <WechatItem avatar={girlImg} topText={'新娘'} bottomText={'语音消息'} animateClass={'wechat-item-animate-2'}
                             click={()=>this._playGirlAudio()}/>
-                <WechatItem avatar={groupImg} middleText={'DD&JL'} animateClass={'wechat-item-animate-3'}/>
+                {/*<WechatItem avatar={groupImg} middleText={'DD&JL'} animateClass={'wechat-item-animate-3'}/>*/}
                 <Back />
                 <img className="return" src={returnImg} onClick={()=>this._goBack()}/>
 
                 <audio className="hidden" id="wechat-audio">
-                    <source src="" type="audio/ogg"/>
                     <source src="" type="audio/mpeg"/>
                 </audio>
             </div>

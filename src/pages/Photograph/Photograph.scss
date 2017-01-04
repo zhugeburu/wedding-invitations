@@ -98,8 +98,8 @@
     .photograph-focus {
       background: url(./images/blue-focus.png) 50px 50px;
       opacity: 0;
-      /*0.5s后隐藏*/
-      @include transition(opacity 0s 0.5s);
+      /*0.1s后隐藏*/
+      @include transition(opacity 0s 0.35s);
     }
     .wedding {
       @include animation(weddingSecond 1s 1.5s ease-out forwards);

@@ -3,7 +3,7 @@
 import React, {Component} from 'react';
 import './Photograph.scss';
 import {browserHistory} from 'react-router';
-
+import {autoPlay} from 'util/audioAutoPlay'
 
 const bgImg = require('../../asset/images/photos/photograph-bg.jpg');
 const borderImg = require('./images/photo-border.png');
@@ -34,6 +34,7 @@ export default class Photograph extends Component {
         this.timerFirstAudio = setTimeout(()=> {
             audioElement.src = DidiMp3;
             audioElement.play();
+            autoPlay('photograph-audio');
         }, 1000);
         /*8.5秒后启动第二段动画（包含咔嚓时候的动画，和咔嚓完出现的love）*/
         this.timerSecond = setTimeout(()=> {
@@ -45,6 +46,7 @@ export default class Photograph extends Component {
         this.timerSecondAudio = setTimeout(()=> {
             audioElement.src = KachaMp3;
             audioElement.play();
+            autoPlay('photograph-audio');
         }, 9000);
         /*11.5秒后启动第三段动画（结果页出现）*/
         this.timerThird = setTimeout(()=> {
@@ -76,6 +78,12 @@ export default class Photograph extends Component {
         }
     }
 
+    _redirectToIntegrated() {
+        browserHistory.replace({
+            pathname: '/integrated'
+        });
+    }
+
     render() {
         const animateClass = this._getAnimagetClass();
         return (
@@ -89,11 +97,10 @@ export default class Photograph extends Component {
                     <img src={weddingImg} className="wedding"/>
                     <div className="wedding-result">
                         <img src={loveImg} className="love-start"/>
-                        <div className="start-button">开启2017</div>
+                        <div className="start-button" onClick={()=>this._redirectToIntegrated()}>开启</div>
                     </div>
                 </div>
                 <audio className="hidden" id="photograph-audio">
-                    <source src="" type="audio/ogg"/>
                     <source src="" type="audio/mpeg"/>
                 </audio>
             </div>

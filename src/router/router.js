@@ -10,6 +10,9 @@ import Wechat from '../pages/Wechat/Wechat';
 import Map from '../pages/Map/Map';
 import Photos from '../pages/Photos/Photos';
 import Photograph from '../pages/Photograph/Photograph';
+import Integrated from '../pages/Integrated/Integrated';
+import Invite from '../pages/Invite/Invite';
+import Snapshot from '../pages/Snapshot/Snapshot';
 export default (store) => {
 
     /**
@@ -33,6 +36,12 @@ export default (store) => {
             <Route path="photos" component={Photos}/>
             { /* 拍照页面 */ }
             <Route path="photograph" component={Photograph}/>
+            { /* 综合页面 */ }
+            <Route path="integrated" component={Integrated}/>
+            { /* 邀请页面 */ }
+            <Route path="invite" component={Invite}/>
+            { /* 快照页面 */ }
+            <Route path="snapshot" component={Snapshot}/>
             { /* Catch all route */ }
             <Route path="*" component={Call}/>
         </Route>

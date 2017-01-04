@@ -10,7 +10,7 @@ var compiler = webpack(config);
 
 app.use(history());
 
-app.use(proxy('/api', {
+app.use(proxy('/wedding', {
     target: 'http://localhost:80',
     changeOrigin: true
 }));
@@ -21,16 +21,16 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));
-app.use('/assets', express.static(__dirname + '/src/asset'));
+app.use('/asset', express.static(__dirname + '/src/asset'));
 // app.get('*', function (request, response){
 //     response.sendFile(path.resolve(__dirname, 'assets', 'index-template.html'))
 // });
 
-app.listen(3000, '0.0.0.0', (err) => {
+app.listen(8081, '0.0.0.0', (err) => {
     if (err) {
         console.log(err);
         return;
     }
 
-    console.log('Listening at http://localhost:3000');
+    console.log('Listening at http://localhost:8081');
 });

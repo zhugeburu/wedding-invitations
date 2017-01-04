@@ -26,8 +26,9 @@
       position: absolute;
       height: 113px;
       transform: rotate(0deg);
-      left: 640px;
+      left: 124px;
       width: 417px;
+      opacity: 0;
       p {
         position: absolute;
       }
@@ -42,22 +43,22 @@
       }
     }
     .wechat-item-animate-1 {
-      @include animation(wechat-item-animate 0.5s 0.2s ease forwards);
+      @include animation(wechat-item-animate 0.6s 0.2s ease-out forwards);
     }
     .wechat-item-animate-2 {
-      @include animation(wechat-item-animate 0.5s 0.7s ease forwards);
+      @include animation(wechat-item-animate 0.6s 0.7s ease-out forwards);
     }
     .wechat-item-animate-3 {
-      @include animation(wechat-item-animate 0.5s 1.2s ease forwards);
+      @include animation(wechat-item-animate 0.6s 1.2s ease-out forwards);
     }
     @keyframes wechat-item-animate {
       from {
-        @include transform(translate3d(0, 0, 0));
-        left: 640px;
+        opacity: 1;
+        @include transform(translateX(640px));
       }
       to {
-        @include transform(translate3d(0, 0, 0));
-        left: 124px;
+        opacity: 1;
+        @include transform(translateX(0px));
       }
     }
   }

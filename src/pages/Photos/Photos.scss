@@ -11,21 +11,21 @@
 
   .photos-left-leave {
     opacity: 1;
-    left: 0;
-    transition: opacity .3s ease-in, left .3s ease-in;
+    @include transform(translateX(0px));
+    transition: opacity .6s ease-out, transform .6s ease-out;
   }
   .photos-left-leave-active {
     opacity: 0;
-    left: -100%;
+    @include transform(translateX(-628px));
   }
   .photos-right-leave {
     opacity: 1;
     left: 0;
-    transition: opacity .3s ease-in, left .3s ease-in;
+    transition: opacity .6s ease-out, transform .6s ease-out;
   }
   .photos-right-leave-active {
     opacity: 0;
-    left: 100%;
+    @include transform(translateX(628px));
   }
   .row {
     position: absolute;

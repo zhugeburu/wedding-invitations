@@ -11,10 +11,16 @@ const leftImg = require('./images/left.png');
 const rightImg = require('./images/right.png');
 
 const photos = [
-    require('../../asset/images/photos/photo1.jpg'),
-    require('../../asset/images/photos/photo2.jpg'),
-    require('../../asset/images/photos/photo3.jpg'),
-    require('../../asset/images/photos/photo4.jpg')
+    require('../../asset/images/photos/photos/photo1.jpg'),
+    require('../../asset/images/photos/photos/photo2.jpg'),
+    require('../../asset/images/photos/photos/photo3.jpg'),
+    require('../../asset/images/photos/photos/photo4.jpg'),
+    require('../../asset/images/photos/photos/photo5.jpg'),
+    require('../../asset/images/photos/photos/photo6.jpg'),
+    require('../../asset/images/photos/photos/photo7.jpg'),
+    require('../../asset/images/photos/photos/photo8.jpg'),
+    require('../../asset/images/photos/photos/photo9.jpg'),
+    require('../../asset/images/photos/photos/photo10.jpg'),
 ]
 
 export default class Photos extends Component {
@@ -23,7 +29,7 @@ export default class Photos extends Component {
         this.state = {
             //当前显示第几张照片
             currentIndex: 0,
-            //每3S自动切换图片，如果手动切换了图片，则重置时间
+            //每5S自动切换图片，如果手动切换了图片，则重置时间
             waitTime: 0,
             //动画向左还是向右边
             animate: 'photos-left'
@@ -33,10 +39,11 @@ export default class Photos extends Component {
     componentDidMount() {
         this.photosInterval = setInterval(()=> {
             let waitTime = ++this.state.waitTime;
-            if (waitTime == 3) {
+            if (waitTime == 5) {
                 this.setState({
                     currentIndex: ++this.state.currentIndex,
                     waitTime: 0,
+                    /*每次自动滑动都是向左滑动*/
                     animate: 'photos-left'
                 });
             }
@@ -81,7 +88,7 @@ export default class Photos extends Component {
                     transitionEnterTimeout={1}
                     transitionLeaveTimeout={200}
                 >
-                    <img className="photos" src={photos[this.state.currentIndex % 4]}
+                    <img className="photos" src={photos[this.state.currentIndex % photos.length]}
                          key={this.state.currentIndex}/>
                 </ReactCSSTransitionGroup>
                 <img src={leftImg} className="left-row row"/>

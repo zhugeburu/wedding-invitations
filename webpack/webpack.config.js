@@ -2,6 +2,9 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var precss = require('precss');
+var autoprefixer = require('autoprefixer');
+
 /*Extract text from bundle into a file.从bundle中提取出特定的text到一个文件中。
  使用 extract-text-webpack-plugin就可以把css从js中独立抽离出来*/
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -25,7 +28,8 @@ module.exports = {
     ],
     output: {
         path: DIST_PATH,
-        publicPath: "/",
+        /*静态资源路径*/
+        publicPath: "http://oj8k4m87h.bkt.clouddn.com/",
         filename: '[name].[chunkhash:5].chunk.js'
     },
     plugins: [
@@ -78,9 +82,14 @@ module.exports = {
         }, {
             test: /\.(png|jpg|gif|svg)$/,
             loader: 'url-loader?limit=8192'
-        },{
+        }, {
             test: /\.(mp3|ogg|m4a|ttf)$/,
             loader: 'file'
         }]
     },
+    postcss: function () {
+        // css autoprefix
+        //css 自动添加浏览器内核前缀
+        return [precss, autoprefixer];
+    }
 };

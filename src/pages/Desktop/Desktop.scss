@@ -7,10 +7,13 @@
   .icon {
     width: 100%;
     height: 100%;
-    z-index: 2;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   .white-bottom {
-    z-index: -1;
+    z-index: 0;
     height: 218px;
     width: 100%;
     position: absolute;
@@ -23,6 +26,7 @@
     height: 162px;
     position: absolute;
     top: 24px;
+    z-index: 3;
     div {
       width: 100%;
       text-align: center;
@@ -43,8 +47,8 @@
     .bottom-text {
       font-size: 26px;
       font-family: ZHSRXT;
-      text-shadow: rgb(0, 0, 0) 0px 0px 2px;
       top: 130px;
+      color: #222020;
     }
   }
 
@@ -53,6 +57,7 @@
     height: 133px;
     position: absolute;
     bottom: 41px;
+    z-index: 4;
   }
 
   .red-point {
@@ -61,6 +66,7 @@
     top: 0;
     width: 40px;
     height: 40px;
+    z-index: 3
   }
   /*红点动画 1*/
   .red-point-animate-1 {

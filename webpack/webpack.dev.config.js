@@ -2,6 +2,8 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var precss = require('precss');
+var autoprefixer = require('autoprefixer');
 
 // 项目根路径
 var ROOT_PATH = path.join(__dirname, '..');
@@ -19,9 +21,9 @@ module.exports = {
         './index.js'
     ],
     output: {
-        path: path.join(DIST_PATH),
+        path: DIST_PATH,
         filename: 'bundle.js',
-        publicPath: 'http://127.0.0.1:3000/'
+        publicPath: 'http://127.0.0.1:8081/'
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
@@ -58,5 +60,10 @@ module.exports = {
             test: /\.(mp3|ogg|m4a|ttf)$/,
             loader: 'file'
         }]
+    },
+    postcss: function () {
+        // css autoprefix
+        //css 自动添加浏览器内核前缀
+        return [precss, autoprefixer];
     }
 };

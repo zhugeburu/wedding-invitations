@@ -5,7 +5,10 @@
 import React, {Component} from 'react';
 import './Desktop.scss';
 import {browserHistory} from 'react-router';
+import {autoPlay} from 'util/audioAutoPlay'
+
 import Bless from '../../components/Bless/Bless';
+import BgImg from '../../components/BgImg/BgImg';
 
 const bgImg = require('../../asset/images/photos/desktop-bg.jpg');
 const iconImg = require('./images/icon.png');
@@ -93,11 +96,6 @@ export default class Desktop extends Component {
         }
     }
 
-    componentWillUnmount() {
-        var element = document.getElementById('desktopBg');
-        element.className = "bg-img";
-    }
-
     _openVideo() {
         this.setState({
             videoShow: true
@@ -128,42 +126,51 @@ export default class Desktop extends Component {
         });
     }
 
+    componentDidMount() {
+        autoPlay('desktop-audio');
+    }
+
     render() {
         return (
             <div className="full-page desktop-page">
                 {/*背景照片*/}
-                <img src={bgImg} id="desktopBg" className="bg-img bg-img-animation"/>
+                <BgImg src={bgImg} animate={true}/>
                 <div className="bg">
                     <div className="white-bottom"></div>
                     <img src={iconImg} className="icon"/>
-                    /*上部热定区*/
-                    <TopHotSpot left="27px" topText={'一月'} middleText={31} bottomText={'日期'}/>
+                    {/*上部热定区*/}
+                    <TopHotSpot left="27px" topText={userType == 'boy' ? '一月' : '2月'}
+                                middleText={userType == 'boy' ? '31' : '04'} bottomText={'日期'}
+                                click={()=>this._redirectToUrl('/integrated')}/>
                     <TopHotSpot left="180px" bottomText={'视频'} click={()=>this._openVideo()}/>
-                    <TopHotSpot left="332px" bottomText={'相册'} click={()=>this._redirectToUrl('/Photos')}/>
+                    <TopHotSpot left="332px" bottomText={'相册'} click={()=>this._redirectToUrl('/photos')}/>
                     <TopHotSpot left="485px" bottomText={'祝福'} click={()=>this._openBless()}/>
-                    /*下部热点区*/
+                    {/*下部热点区*/}
                     <BottomHotSpot count={2} left="27px" animateType={2} toUrl={'/dialing'}/>
                     <BottomHotSpot count={1} left="180px" animateType={2} toUrl={'/wechat'}/>
                     <BottomHotSpot count={3} left="332px" animateType={1} toUrl={'/photograph'}/>
                     <BottomHotSpot count={1} left="485px" toUrl={'/map'}/>
                 </div>
-                <audio className="hidden" autoPlay>
+                <audio className="hidden" autoPlay id="desktop-audio">
                     <source src={audioOgg} type="audio/ogg"/>
                     <source src={audioMp3} type="audio/mpeg"/>
                 </audio>
 
-                /*视频*/
+                {/*视频*/}
                 {this.state.videoShow ?
                     <div className='video' onClick={()=>this._closeVideo()}>
                         <img src={closeImg} className="close" onClick={()=>this._closeVideo()}/>
-                        <iframe src="http://v.qq.com/iframe/player.html?vid=d01834z8wij"
+                        <iframe src="https://v.qq.com/iframe/player.html?vid=d0362vjag67&tiny=0&auto=0"
                                 onClick={(e)=>e.preventDefault()}></iframe>
                     </div>
                     :
                     ''
                 }
-                /*祝福*/
-                <Bless show={this.state.blessShow} close={()=> this._closeBless()}/>
+                {/*祝福*/}
+                {this.state.blessShow ?
+                    <Bless close={()=> this._closeBless()}/>
+                    : ''
+                }
             </div>
         );
     }
