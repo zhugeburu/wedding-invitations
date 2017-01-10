@@ -24,18 +24,19 @@
 
 * PHP
 
-## 主要文件夹说明
-
-1. 核心代码放心`src`目录下。
-
-2. 公共资源放在`src/asset`下。
-
 ## 后端代码说明
 1. 后端代码在根目录`php`文件夹下,需要的`sql`文件放在该目录下。
 
 2. 后端是用PHP写的，主要实现了简单的祝福语插入与查询接口。
 
-3. 相应的接口端口配置在`server.js`下。代理`/wedding`开头的路径到80服务器（后端项目端口）。
+
+## 开发坏境配置与启动
+
+1. 将`php`文件夹复制到本地的`PHP`坏境。
+
+2. 新建数据库，执行`php/wedding.sql`，修改`getBless.php`与`commitBless.php`中数据库相关配置。
+
+2. 修改`server.js`,修改端口为相应的PHP端口。
 
     ```
     app.use(proxy('/wedding', {
@@ -44,13 +45,11 @@
     }));
     ```
 
-## 开发坏境启动
+3. 执行`npm install`
 
-1. `npm install`
+4. 执行`npm start`
 
-2. `npm start`
-
-3. 浏览器访问 [http://localhost:8081](http://localhost:8081)
+5. 浏览器访问 [http://localhost:8081](http://localhost:8081)
 
 
 ## 生产坏境打包
