@@ -42,13 +42,13 @@
 2. 新建数据库，执行`php/wedding.sql`，修改`getBless.php`与`commitBless.php`中数据库相关配置。
 
 3. 修改`server.js`,修改端口为相应的PHP端口。(当`uri`为`/wedding`时，代理到php所在的`url`)
-   
-       ```
-       app.use(proxy('/wedding', {
-           target: 'http://localhost:80',
-           changeOrigin: true
-       }));
-       ```
+   ```
+   app.use(proxy('/wedding', {
+       target: 'http://localhost:80',
+       changeOrigin: true
+   }));
+   ```
+
 
 ## 生产坏境打包
 
