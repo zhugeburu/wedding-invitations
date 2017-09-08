@@ -40,7 +40,7 @@ export default class Talk extends Component {
     }
 
     _countDown(timestamp) {
-        var endTimestamp = 1485820800;
+        var endTimestamp = 1577808000;
         if (timestamp == 0 || timestamp >= endTimestamp) {
             return '';
         }
