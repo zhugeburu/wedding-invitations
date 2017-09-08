@@ -1,6 +1,6 @@
 # 婚礼请柬
 
-点这里预览下:[这里](brickspert.github.io/wedding-Invitations/)
+点这里预览下:[这里](https://brickspert.github.io/wedding-Invitations/)
 
 **请注意：本系统仅测试了在主流手机微信平台上的兼容性。**
 
