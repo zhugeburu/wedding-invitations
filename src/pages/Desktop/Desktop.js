@@ -134,7 +134,7 @@ export default class Desktop extends Component {
         return (
             <div className="full-page desktop-page">
                 {/*背景照片*/}
-                <BgImg src={bgImg} animate={true}/>
+                <BgImg src={bgImg} animate={false}/>
                 <div className="bg">
                     <div className="white-bottom"></div>
                     <img src={iconImg} className="icon"/>

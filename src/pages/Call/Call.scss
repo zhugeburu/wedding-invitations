@@ -2,31 +2,31 @@
 
 .call-page {
   .bg {
-    background-color: rgba(0, 0, 0, 0.31);
+    background-color: rgba(0, 0, 0, 0.25);
   }
   .img-line-1 {
     position: absolute;
-    width: 172px;
-    height: 172px;
-    bottom: 332px;
+    width: 1.9rem;
+    height: 1.9rem;
+    bottom: 3.32rem;
   }
   .tip {
-    left: 103px;
+    left: 1.03rem;
   }
   .message {
-    right: 114px;
+    right: 1.05rem;
   }
   .img-line-2 {
     position: absolute;
-    width: 163px;
-    height: 163px;
-    bottom: 90px;
+    width: 1.83rem;
+    height: 1.83rem;
+    bottom: 0.90rem;
   }
   .refuse {
-    left: 110px;
+    left: 1.05rem;
   }
   .answer {
-    right: 110px;
+    right: 1rem;
     @include animation(call-answer-animation 2s infinite);
   }
 

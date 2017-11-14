@@ -40,7 +40,7 @@ export default class Talk extends Component {
     }
 
     _countDown(timestamp) {
-        var endTimestamp = 1577808000;
+        var endTimestamp = +new Date("Sun Dec 17 2017 11:00:00 GMT+0800 (CST)")/1000;
         if (timestamp == 0 || timestamp >= endTimestamp) {
             return '';
         }

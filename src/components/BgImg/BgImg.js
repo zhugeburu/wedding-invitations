@@ -9,7 +9,7 @@ export default class Loading extends Component {
     render() {
         const {src, animate} = this.props;
         return (
-            <div className={animate ? 'bg-img bg-img-animate' : 'bg-img'}>
+            <div className={animate ? 'bg-img bg-img-animate1' : 'bg-img'}>
                 <img src={src}/>
             </div>
         )
