@@ -23,7 +23,7 @@ module.exports = {
     output: {
         path: DIST_PATH,
         filename: 'bundle.js',
-        publicPath: 'http://192.168.1.105:8081/'// 172.23.164.43
+        publicPath: 'http://172.23.162.78:8081/'// 172.23.164.43
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
@@ -54,7 +54,7 @@ module.exports = {
             test: /\.json/,
             loaders: ['json-loader']
         }, {
-            test: /\.(png|jpg|gif)$/,
+            test: /\.(png|jpg|gif|svg)$/,
             loader: 'url-loader?limit=8192'
         }, {
             test: /\.(mp3|ogg|m4a|ttf)$/,
