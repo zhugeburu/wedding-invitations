@@ -11,7 +11,16 @@ import Bless from '../../components/Bless/Bless';
 import BgImg from '../../components/BgImg/BgImg';
 
 const bgImg = require('../../asset/images/photos/desktop-bg.jpg');
-const iconImg = require('./images/icon.png');
+
+const phone = require('./images/phone.png');
+const wechat = require('./images/wechat.png');
+const didi = require('./images/didi.png');
+const map = require('./images/map.png');
+
+const video = require('./images/video.png');
+const weibo = require('./images/weibo.png');
+const photo = require('./images/photo.png');
+
 const count1Img = require('./images/count-1.png');
 const count2Img = require('./images/count-2.png');
 const count3Img = require('./images/count-3.png');
@@ -136,20 +145,34 @@ export default class Desktop extends Component {
                 {/*背景照片*/}
                 <BgImg src={bgImg} animate={false}/>
                 <div className="bg">
-                    <div className="white-bottom"></div>
-                    <img src={iconImg} className="icon"/>
                     {/*上部热定区*/}
-                    <TopHotSpot left="27px" topText={userType == 'boy' ? '一月' : '2月'}
-                                middleText={userType == 'boy' ? '31' : '04'} bottomText={'日期'}
-                                click={()=>this._redirectToUrl('/integrated')}/>
-                    <TopHotSpot left="180px" bottomText={'视频'} click={()=>this._openVideo()}/>
-                    <TopHotSpot left="332px" bottomText={'相册'} click={()=>this._redirectToUrl('/photos')}/>
-                    <TopHotSpot left="485px" bottomText={'祝福'} click={()=>this._openBless()}/>
-                    {/*下部热点区*/}
-                    <BottomHotSpot count={2} left="27px" animateType={2} toUrl={'/dialing'}/>
-                    <BottomHotSpot count={1} left="180px" animateType={2} toUrl={'/wechat'}/>
-                    <BottomHotSpot count={3} left="332px" animateType={1} toUrl={'/photograph'}/>
-                    <BottomHotSpot count={1} left="485px" toUrl={'/map'}/>
+                    <div className="top-box">
+                      <TopHotSpot left="0rem" bottomText={'日期'}  click={()=>this._redirectToUrl('/integrated')}/>
+                      <TopHotSpot left="1.85rem" bottomText={'视频'} click={()=>this._openVideo()}/>
+                      <TopHotSpot left="3.7rem" bottomText={'相册'} click={()=>this._redirectToUrl('/photos')}/>
+                      <TopHotSpot left="5.55rem" bottomText={'祝福'} click={()=>this._openBless()}/>
+                      <div className="top-icon data-icon">
+                        <span className='day'>星期日</span>
+                        <span className='num'>17</span>
+                      </div>
+                      <img src={video} className="top-icon video-icon"/>
+                      <img src={photo} className="top-icon"/>
+                      <img src={weibo} className="top-icon"/>
+                    </div>
+
+
+
+                    <div className="white-bottom">
+                      {/*下部热点区*/}
+                      <BottomHotSpot count={2} left="0rem" animateType={2} toUrl={'/dialing'}/>
+                      <BottomHotSpot count={1} left="1.8rem" animateType={2} toUrl={'/wechat'}/>
+                      <BottomHotSpot count={3} left="3.65rem" animateType={1} toUrl={'/photograph'}/>
+                      <BottomHotSpot count={1} left="5.5rem" toUrl={'/map'}/>
+                      <img src={phone} className="bottom-icon"/>
+                      <img src={wechat} className="bottom-icon"/>
+                      <img src={didi} className="bottom-icon"/>
+                      <img src={map} className="bottom-icon"/>
+                    </div>
                 </div>
                 <audio className="hidden" autoPlay id="desktop-audio">
                     <source src={audioOgg} type="audio/ogg"/>
