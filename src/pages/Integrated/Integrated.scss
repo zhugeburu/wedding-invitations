@@ -1,17 +1,52 @@
 @import "../../asset/css/util";
 
 .integrated-page {
+  .bg-img{
+    img{
+      //height: 8.5rem;
+      //width: 7.9rem;
+    }
+  }
   .bg {
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, 0.35);
+    .text-content {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      background-color: rgba(8, 6, 6, 0.2);
+      color: #f181bc;
+      font-size: 0.4rem;
+      box-sizing: border-box;
+      padding: 0.3rem 0.5rem;
+      text-indent: 2em;
+      p:first-child {
+        text-indent: 0;
+      }
+      p {
+        opacity: 0;
+        @include animation(inviteTextContent 1.5s 0.6s cubic-bezier(0.39, 0.66, 0.57, 1) 1 forwards);
+      }
+    }
+    @keyframes inviteTextContent {
+      0% {
+        opacity: 0;
+        @include transform(translate3d(0, 100%, 0));
+      }
+      100% {
+        opacity: 1;
+        @include transform(none)
+      }
+    }
   }
   .white-circle {
     position: absolute;
-    height: 671px;
-    width: 377px;
+    height: 6rem;
+    width: 3.5rem;
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-    left: -30px;
-    top: 350px;
-    opacity: 0.6;
+    bottom: -2rem;
+    left: -1.3rem;
+    -webkit-animation: whiteCircle 2s ease 1 both;
     animation: whiteCircle 2s ease 1 both;
   }
 
@@ -46,9 +81,6 @@
     }
   }
   .integrated-back {
-    left: 208px;
-    bottom: 20px;
-    @include animation(backAnimate 1s 1.5s 1 both);
   }
   .integrated-item {
     position: absolute;

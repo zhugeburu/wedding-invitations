@@ -31,11 +31,12 @@
     }
     .wedding {
       position: absolute;
-      top: 533px;
-      width: 400px;
+      bottom: 1.1rem;
+      width: 4rem;
       left: 50%;
-      margin-left: -200px;
-      @include transform(scale(1.5));
+      margin-left: -1.8rem;
+      -webkit-transform: scale(1.7);
+      transform: scale(1.7);
       opacity: 0;
     }
     .wedding-result {
@@ -120,14 +121,19 @@
       opacity: 1;
       @include transition(opacity 1s);
     }
+    .wedding {
+      opacity: 1;
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
   }
   @keyframes weddingSecond {
     0% {
-      @include transform(scale(1.5));
+      @include transform(scale(1.8));
       opacity: 1;
     }
     100% {
-      @include transform(scale(1));
+      @include transform(scale(1.2));
       opacity: 1;
     }
   }

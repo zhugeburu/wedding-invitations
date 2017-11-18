@@ -25,9 +25,11 @@ const count1Img = require('./images/count-1.png');
 const count2Img = require('./images/count-2.png');
 const count3Img = require('./images/count-3.png');
 const closeImg = require('./images/close.png');
+const backImg = require('./images/back.png');
 
 const audioMp3 = require('./audio/duang.mp3');
 const audioOgg = require('./audio/duang.ogg');
+
 
 /*底部热点区组件*/
 class BottomHotSpot extends Component {
@@ -181,8 +183,9 @@ export default class Desktop extends Component {
 
                 {/*视频*/}
                 {this.state.videoShow ?
-                    <div className='video' onClick={()=>this._closeVideo()}>
-                        <img src={closeImg} className="close" onClick={()=>this._closeVideo()}/>
+                    <div className='video'>
+                        <img src={backImg} className="back" onClick={()=>this._closeVideo()}/>
+                        {/*<img src={closeImg} className="close" onClick={()=>this._closeVideo()}/>*/}
                         <iframe src="https://v.qq.com/iframe/player.html?vid=d0362vjag67&tiny=0&auto=0"
                                 onClick={(e)=>e.preventDefault()}></iframe>
                     </div>
