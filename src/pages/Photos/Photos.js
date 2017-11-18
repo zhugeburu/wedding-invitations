@@ -57,37 +57,11 @@ export default class Photos extends Component {
               <Back position={"back-left-top"}/>
                 <div className='gallery-box'>
                   <ul id='image-gallery' className='gallery'>
-                    {/*todo v-for */}
-                    <li data-thumb={photos[0]}>
-                      <img src={photos[0]}/>
-                    </li>
-                    <li data-thumb={photos[1]}>
-                      <img src={photos[1]}/>
-                    </li>
-                    <li data-thumb={photos[2]}>
-                      <img src={photos[2]}/>
-                    </li>
-                    <li data-thumb={photos[3]}>
-                      <img src={photos[3]}/>
-                    </li>
-                    <li data-thumb={photos[4]}>
-                      <img src={photos[4]}/>
-                    </li>
-                    <li data-thumb={photos[5]}>
-                      <img src={photos[5]}/>
-                    </li>
-                    <li data-thumb={photos[6]}>
-                      <img src={photos[6]}/>
-                    </li>
-                    <li data-thumb={photos[7]}>
-                      <img src={photos[7]}/>
-                    </li>
-                    <li data-thumb={photos[8]}>
-                      <img src={photos[8]}/>
-                    </li>
-                    <li data-thumb={photos[9]}>
-                      <img src={photos[9]}/>
-                    </li>
+                    {photos.map((item, index) => (
+                      <li data-thumb={item}>
+                        <img src={item}/>
+                      </li>
+                    ))}
                   </ul>
                 </div>
             </div>
