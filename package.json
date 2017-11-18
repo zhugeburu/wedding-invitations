@@ -4,9 +4,8 @@
   "description": "基于react+redux+webpack+es6+css3的婚礼请柬",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "bundle": "cross-env NODE_ENV=production webpack -p --optimize-dedupe --display-modules --sort-modules-by size --config webpack/webpack.config.js",
-    "test": "cross-env NODE_ENV=test mocha"
+    "start": "node app.js",
+    "build": "cross-env NODE_ENV=production webpack -p --optimize-dedupe --display-modules --sort-modules-by size --config webpack/webpack.config.js"
   },
   "keywords": [
     "wedding",
@@ -63,7 +62,9 @@
     "axios": "^0.15.3",
     "babel-polyfill": "^6.20.0",
     "es6-promise": "^4.0.5",
+    "express": "^4.16.2",
     "file-loader": "^0.9.0",
+    "http-proxy-middleware": "^0.17.4",
     "react": "^15.2.1",
     "react-addons-css-transition-group": "^15.4.1",
     "react-dom": "^15.2.1",

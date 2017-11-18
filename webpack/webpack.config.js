@@ -29,8 +29,8 @@ module.exports = {
     output: {
         path: DIST_PATH,
         /*静态资源路径*/
-        publicPath: "/",
-        filename: '[name].[chunkhash:5].chunk.js'
+        publicPath: "/public/",
+        filename: '[name].chunk.js'
     },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
@@ -58,7 +58,7 @@ module.exports = {
                 warnings: false
             }
         }),
-        new ExtractTextPlugin('[name].[contenthash:5].chunk.css')
+        new ExtractTextPlugin('[name].chunk.css')
     ],
     resolve: {
         extensions: ['', '.js'],
