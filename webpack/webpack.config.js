@@ -30,7 +30,7 @@ module.exports = {
         path: DIST_PATH,
         /*静态资源路径*/
         publicPath: "/public/",
-        filename: '[name].chunk.js'
+        filename: '[name].js'
     },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
