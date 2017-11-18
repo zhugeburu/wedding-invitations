@@ -40,9 +40,9 @@ export default class Photos extends Component {
       $('#image-gallery').lightSlider({
         gallery:true,
         item:1,
-        thumbItem:9,
+        thumbItem:10,
         slideMargin: 0,
-        speed:500,
+        speed:600,
         auto:true,
         loop:true,
         onSliderLoad: function() {
@@ -87,9 +87,6 @@ export default class Photos extends Component {
                     </li>
                     <li data-thumb={photos[9]}>
                       <img src={photos[9]}/>
-                    </li>
-                    <li data-thumb={photos[10]}>
-                      <img src={photos[10]}/>
                     </li>
                   </ul>
                 </div>

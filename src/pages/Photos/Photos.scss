@@ -2,6 +2,10 @@
 
 .photos-page {
   position: relative;
+  background: #000;
+  .cS-hidden{
+    display: none;
+  }
   .gallery-box{
     position: absolute;
     top: 50%;
@@ -9,11 +13,14 @@
     right: 0;
     transform: translateY(-50%);
     width: 100%;
+
   }
   .gallery{
     img{
       width: 100%;
       height: auto;
+      min-height: 4.5rem;
+      min-width: 7rem;
     }
   }
 }
