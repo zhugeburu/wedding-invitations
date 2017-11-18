@@ -30,6 +30,7 @@ const backImg = require('./images/back.png');
 const audioMp3 = require('./audio/duang.mp3');
 const audioOgg = require('./audio/duang.ogg');
 
+var desRadioPlayed = false
 
 /*底部热点区组件*/
 class BottomHotSpot extends Component {
@@ -138,7 +139,10 @@ export default class Desktop extends Component {
     }
 
     componentDidMount() {
+      if (!desRadioPlayed) {
         autoPlay('desktop-audio');
+        desRadioPlayed = true
+      }
     }
 
     render() {
@@ -176,7 +180,7 @@ export default class Desktop extends Component {
                       <img src={map} className="bottom-icon"/>
                     </div>
                 </div>
-                <audio className="hidden" autoPlay id="desktop-audio">
+                <audio className="hidden" id="desktop-audio">
                     <source src={audioOgg} type="audio/ogg"/>
                     <source src={audioMp3} type="audio/mpeg"/>
                 </audio>

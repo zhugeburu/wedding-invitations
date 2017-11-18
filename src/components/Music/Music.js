@@ -6,8 +6,7 @@ import React, {Component} from 'react';
 import './Music.scss';
 const bgm = require('../../asset/audio/for-love.mp3');
 const playMusicArr = [
-    'photos', 'integrated', 'invite', 'snapshot', 'dialing',
-    'map'
+    'desktop', 'photos', 'integrated', 'invite', 'snapshot', 'dialing', 'wechat', 'map', 'photograph'
 ];
 export default class Music extends Component {
     constructor(props) {

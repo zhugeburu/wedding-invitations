@@ -54,7 +54,7 @@ module.exports = {
             test: /\.json/,
             loaders: ['json-loader']
         }, {
-            test: /\.(png|jpg|gif|jpeg)$/,
+            test: /\.(png|jpg|gif|svg)$/,
             loader: 'url-loader?limit=8192'
         }, {
             test: /\.(mp3|ogg|m4a|ttf)$/,

@@ -11,16 +11,16 @@ const leftImg = require('./images/left.png');
 const rightImg = require('./images/right.png');
 
 const photos = [
-    require('../../asset/images/photos/photos/photo1.jpg'),
-    require('../../asset/images/photos/photos/photo2.jpg'),
-    require('../../asset/images/photos/photos/photo3.jpg'),
-    require('../../asset/images/photos/photos/photo4.jpg'),
-    require('../../asset/images/photos/photos/photo5.jpg'),
-    require('../../asset/images/photos/photos/photo6.jpg'),
-    require('../../asset/images/photos/photos/photo7.jpg'),
-    require('../../asset/images/photos/photos/photo8.jpg'),
-    require('../../asset/images/photos/photos/photo9.jpg'),
-    require('../../asset/images/photos/photos/photo10.jpg'),
+    require('../../asset/images/phone-photos/1.jpg'),
+    require('../../asset/images/phone-photos/2.jpg'),
+    require('../../asset/images/phone-photos/3.jpg'),
+    require('../../asset/images/phone-photos/4.jpg'),
+    require('../../asset/images/phone-photos/5.jpg'),
+    require('../../asset/images/phone-photos/6.jpg'),
+    require('../../asset/images/phone-photos/7.jpg'),
+    require('../../asset/images/phone-photos/8.jpg'),
+    require('../../asset/images/phone-photos/9.jpg'),
+    require('../../asset/images/phone-photos/10.jpg')
 ]
 
 export default class Photos extends Component {
@@ -37,63 +37,62 @@ export default class Photos extends Component {
     }
 
     componentDidMount() {
-        this.photosInterval = setInterval(()=> {
-            let waitTime = ++this.state.waitTime;
-            if (waitTime == 5) {
-                this.setState({
-                    currentIndex: ++this.state.currentIndex,
-                    waitTime: 0,
-                    /*每次自动滑动都是向左滑动*/
-                    animate: 'photos-left'
-                });
-            }
-        }, 1000);
-        var startX, endX;
-        document.getElementsByClassName('photos-page')[0].addEventListener('touchstart', (e)=> {
-            startX = e.touches[0].pageX;
-        });
-        document.getElementsByClassName('photos-page')[0].addEventListener('touchend', (e) => {
-            endX = e.changedTouches[0].pageX;
-            if (endX - startX > 50) {
-                //alert('右滑动');
-                var currentIndex = --this.state.currentIndex;
-                if (currentIndex == -1) {
-                    currentIndex = photos.length - 1;
-                }
-                this.setState({
-                    currentIndex: currentIndex,
-                    waitTime: 0,
-                    animate: 'photos-right'
-                });
-            } else if (startX - endX > 50) {
-                //alert('左滑动');
-                this.setState({
-                    currentIndex: ++this.state.currentIndex,
-                    waitTime: 0,
-                    animate: 'photos-left'
-                });
-            }
-        });
-    }
+      $('#image-gallery').lightSlider({
+        gallery:true,
+        item:1,
+        thumbItem:9,
+        slideMargin: 0,
+        speed:500,
+        auto:true,
+        loop:true,
+        onSliderLoad: function() {
 
-    componentWillUnmount() {
-        this.photosInterval && clearInterval(this.photosInterval);
+        }
+      });
     }
 
     render() {
-        return (
+       return (
             <div className="full-page photos-page">
-                <ReactCSSTransitionGroup
-                    transitionName={this.state.animate}
-                    transitionEnterTimeout={1}
-                    transitionLeaveTimeout={200}
-                >
-                    <img className="photos" src={photos[this.state.currentIndex % photos.length]}
-                         key={this.state.currentIndex}/>
-                </ReactCSSTransitionGroup>
-                <img src={leftImg} className="left-row row"/>
-                <img src={rightImg} className="right-row row"/>
-                <Back position={"back-left-top"}/>
+              <Back position={"back-left-top"}/>
+                <div className='gallery-box'>
+                  <ul id='image-gallery' className='gallery'>
+                    {/*todo v-for */}
+                    <li data-thumb={photos[0]}>
+                      <img src={photos[0]}/>
+                    </li>
+                    <li data-thumb={photos[1]}>
+                      <img src={photos[1]}/>
+                    </li>
+                    <li data-thumb={photos[2]}>
+                      <img src={photos[2]}/>
+                    </li>
+                    <li data-thumb={photos[3]}>
+                      <img src={photos[3]}/>
+                    </li>
+                    <li data-thumb={photos[4]}>
+                      <img src={photos[4]}/>
+                    </li>
+                    <li data-thumb={photos[5]}>
+                      <img src={photos[5]}/>
+                    </li>
+                    <li data-thumb={photos[6]}>
+                      <img src={photos[6]}/>
+                    </li>
+                    <li data-thumb={photos[7]}>
+                      <img src={photos[7]}/>
+                    </li>
+                    <li data-thumb={photos[8]}>
+                      <img src={photos[8]}/>
+                    </li>
+                    <li data-thumb={photos[9]}>
+                      <img src={photos[9]}/>
+                    </li>
+                    <li data-thumb={photos[10]}>
+                      <img src={photos[10]}/>
+                    </li>
+                  </ul>
+                </div>
             </div>
         )
     };

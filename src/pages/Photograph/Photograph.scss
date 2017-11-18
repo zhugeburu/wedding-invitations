@@ -103,7 +103,7 @@
       @include transition(opacity 0s 0.35s);
     }
     .wedding {
-      @include animation(weddingSecond 1s 1.5s ease-out forwards);
+      @include animation(weddingSecond 1s 0.8s ease-out forwards);
     }
   }
   /*第三次动画包含了结果页*/

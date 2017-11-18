@@ -3,19 +3,17 @@
 .integrated-page {
   .bg-img{
     img{
-      //height: 8.5rem;
-      //width: 7.9rem;
+      height: inherit;
     }
   }
   .bg {
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.2);
     .text-content {
       width: 100%;
       position: absolute;
-      bottom: 0;
-      background-color: rgba(8, 6, 6, 0.2);
+      bottom: 1rem;
       color: #f181bc;
-      font-size: 0.4rem;
+      font-size: 0.38rem;
       box-sizing: border-box;
       padding: 0.3rem 0.5rem;
       text-indent: 2em;
@@ -42,10 +40,9 @@
     position: absolute;
     height: 6rem;
     width: 3.5rem;
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    bottom: -2rem;
-    left: -1.3rem;
+    transform: rotate(90deg);
+    top: 5.85rem;
+    left: 2rem;
     -webkit-animation: whiteCircle 2s ease 1 both;
     animation: whiteCircle 2s ease 1 both;
   }
@@ -112,11 +109,11 @@
   }
   @keyframes whiteCircle {
     0% {
-      @include transform(translateX(-625px));
+      transform: rotate(90deg) translateX(625px);
       opacity: 0;
     }
     100% {
-      @include transform(translateX(0px));
+      transform: rotate(90deg) translateX(0px);
       opacity: 0.6;
     }
   }

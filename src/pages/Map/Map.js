@@ -7,9 +7,6 @@ import './Map.scss';
 import {browserHistory} from 'react-router';
 import  Back from 'components/Back/Back';
 
-const hertImg = require('./images/hert.png');
-const closeImg = require('./images/close.png');
-
 const carImg = require('./images/car.png');
 
 export default class Map extends Component {
@@ -141,6 +138,7 @@ export default class Map extends Component {
           name: '接新娘-去程',
           path: [
             [120.057965,30.887976],
+            [120.058581,30.887695],
             [120.059982,30.891659],
             [120.064917,30.887718],
             [120.067427,30.886337],
@@ -186,6 +184,7 @@ export default class Map extends Component {
               name: '',
               path: [
                 [120.057965,30.887976],
+                [120.058581,30.887695],
                 [120.059982,30.891659],
                 [120.064917,30.887718],
                 [120.067427,30.886337],
@@ -231,7 +230,8 @@ export default class Map extends Component {
                 [120.073516,30.884694],
                 [120.073602,30.885357],
                 [120.073419,30.885384],
-                [120.073269,30.885974]
+                [120.073269,30.885974],
+                [120.073398,30.886264]
               ]
             }
         ]

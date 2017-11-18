@@ -8,7 +8,7 @@ import Back from 'components/Back/Back';
 import Bless from 'components/Bless/Bless';
 import BgImg from '../../components/BgImg/BgImg';
 
-const bgImg = require('./images/lulu.jpg');
+const bgImg = require('./images/9icon.jpg');
 
 const circle1Img = require('./images/circle-1.png');
 const circle2Img = require('./images/circle-2.png');
@@ -69,7 +69,7 @@ export default class Integrated extends Component {
                     <div className="text-content">
                         <p>各位坑友们：</p>
                         <p>诚挚地邀请您于2017年12月17日，星期日，11:00参加陈钦辉与项璐露的结婚典礼。</p>
-                        <p>友情提醒：红包带好，地点：点击地图APP</p>
+                        <p>友情提醒：红包带好，地点：湖州仁皇山花园大酒店，点击地图APP可查看</p>
                     </div>
                 </div>
             </div>
