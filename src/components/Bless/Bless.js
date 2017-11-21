@@ -6,6 +6,7 @@ import React, {Component} from 'react';
 import './Bless.scss';
 import {getBless, commitBless} from '../../reducers/bless/bless'
 import {connect} from 'react-redux';
+import {T} from 'react-toast-mobile';
 
 import {browserHistory} from 'react-router';
 
@@ -32,6 +33,7 @@ export default class Bless extends Component {
     _restText() {
         this.refs.blessName.value = '';
         this.refs.blessText.value = '';
+        this.refs.blessNum.value = 1;
     }
 
     _commitBless() {
@@ -40,27 +42,35 @@ export default class Bless extends Component {
         }
         const name = this.refs.blessName.value;
         const text = this.refs.blessText.value;
+        const number = this.refs.blessNum.value;
         if (name == '') {
-            alert('留下你的大名~~');
+            T.alert('留下你的大名~~');
             return;
         }
         if (name.length > 24) {
-            alert('你名字填短点吧，放不下了~');
+            T.alert('你名字填短点吧，放不下了~');
             return;
         }
         if (text == '') {
-            alert('说点什么吧~亲。');
+            T.alert('说点什么吧~亲。');
             return;
         }
         if (text.length > 200) {
-            alert('祝福最多200个字，太多了放不下啊~');
+            T.alert('祝福最多200个字，太多了放不下啊~');
             return;
         }
-        this.props.commitBless(name, text, ()=>this._restText());
+        this.props.commitBless(name, text, number, ()=>this._restText());
     }
 
     render() {
-        const blessPanel = this.props.bless.blesses.map((item, index)=> {
+        // const blessPanel = this.props.bless.blesses.map((item, index)=> {
+        const blessPanel = Array.apply('', new Array(10)).map(function (item) {
+            return {
+                name: '陈清华',
+                text: '你好吗你好么你好吗你好么',
+                time: '2017-12-04 23:00'
+            }
+        }).map((item, index)=> {
             const itemClassName = index % 2 == 0 ? "bless-item bless-item-left" : "bless-item bless-item-right";
             return (
                 <div className={itemClassName} key={index}>
@@ -75,6 +85,16 @@ export default class Bless extends Component {
                 <div className="top-box">
                     <div className="left-box">
                         <input type="text" className="bless-name" ref="blessName" placeholder="请输入姓名"/>
+                        <select className="bless-num" ref="blessNum">
+                            <option value="1">出席1人</option>
+                            <option value="2">出席2人</option>
+                            <option value="3">出席3人</option>
+                            <option value="4">出席4人</option>
+                            <option value="5">出席5人</option>
+                            <option value="6">出席6人</option>
+                            <option value="0">待定</option>
+                            <option value="-1">有事</option>
+                        </select>
                         <textarea className="bless-text" ref="blessText" placeholder="请输入祝福的话语">
                         </textarea>
                     </div>

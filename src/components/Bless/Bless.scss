@@ -31,16 +31,26 @@
         box-sizing: border-box;
         margin-top: 1%;
         height: 30%;
-        width: 100%;
+        width: 50%;
         border: none;
         background-color: rgba(255, 255, 255, 0.8);
-        font-size: 28px;
+        font-size: 0.5rem;
         padding: 0 10px;
         border-radius: 5px;
       }
+      .bless-num {
+        box-sizing: border-box;
+        margin-top: 1%;
+        height: 30%;
+        width: 50%;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.8);
+        font-size: 0.5rem;
+        padding: 0 10px;
+      }
       .bless-text {
         box-sizing: border-box;
-        font-size: 28px;
+        font-size: 0.5rem;
         margin-top: 1%;
         height: 67%;
         width: 100%;

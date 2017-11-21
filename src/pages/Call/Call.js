@@ -7,6 +7,8 @@ import './Call.scss';
 import BgImg from '../../components/BgImg/BgImg';
 import {browserHistory} from 'react-router';
 import {autoPlay} from 'util/audioAutoPlay'
+import {T} from 'react-toast-mobile';
+
 
 const bgImg = require('../../asset/images/photos/call-bg.jpg');
 const tipImg = require('./images/tip.png');
@@ -28,6 +30,10 @@ export default class Call extends Component {
         });
     }
 
+    _refuse() {
+        T.notify('你挂呀你挂呀');
+    }
+
     componentDidMount() {
         autoPlay('call-audio');
     }
@@ -44,7 +50,7 @@ export default class Call extends Component {
                 <div className="bg">
                     <img className="tip img-line-1" src={tipImg}/>
                     <img className="message img-line-1" src={messageImg}/>
-                    <img className="refuse img-line-2" src={refuseImg}/>
+                    <img className="refuse img-line-2" src={refuseImg} onClick={()=>this._refuse()}/>
                     <img className="answer img-line-2" src={answerImg} onClick={()=>this._redirectToTalk()}/>
                 </div>
                 <audio className="hidden" id="call-audio" autoPlay loop>
