@@ -8,7 +8,7 @@ import Back from 'components/Back/Back';
 import Bless from 'components/Bless/Bless';
 import BgImg from '../../components/BgImg/BgImg';
 
-const bgImg = require('../../asset/images/photos/integrated-bg.jpg');
+const bgImg = require('./images/9icon.jpg');
 
 const circle1Img = require('./images/circle-1.png');
 const circle2Img = require('./images/circle-2.png');
@@ -64,35 +64,13 @@ export default class Integrated extends Component {
             <div className="full-page integrated-page">
                 <BgImg src={bgImg} animate={false}/>
                 <div className="bg">
-                    <img src={whiteCircleImg} className="white-circle"/>
-                    <IntegratedItem
-                        position="item-1"
-                        imgSrc={circle1Img}
-                        title="爱的邀约"
-                        intro="邀请信息"
-                        click={()=>this._redirectToInvite()}
-                    />
-                    <IntegratedItem
-                        position="item-2"
-                        imgSrc={circle2Img}
-                        title="播映快照"
-                        intro="独家收藏"
-                        click={()=>this._redirectToSnapshot()}
-                    />
-                    <IntegratedItem
-                        position="item-3"
-                        imgSrc={circle2Img}
-                        title="好友动态"
-                        intro="祝福留言"
-                        click={()=>this._openBless()}
-                    />
                     <Back position={"integrated-back"}/>
-
-                    {/*祝福*/}
-                    {this.state.blessShow ?
-                        <Bless close={()=> this._closeBless()}/>
-                        : ''
-                    }
+                    <img src={whiteCircleImg} className="white-circle"/>
+                    <div className="text-content">
+                        <p>各位坑友们：</p>
+                        <p>诚挚地邀请您于2017年12月17日，星期日，11:00参加陈钦辉与项璐露的结婚典礼。</p>
+                        <p>友情提醒：大红包带好，地点：湖州仁皇山花园大酒店，点击地图APP可查看</p>
+                    </div>
                 </div>
             </div>
         )

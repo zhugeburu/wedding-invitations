@@ -4,7 +4,8 @@
 
 /*ios微信音频不能自动播放问题解决*/
 export function autoPlay(eId) {
-    wx.config({
+    if (wx) {
+      wx.config({
         // 配置信息, 即使不正确也能使用 wx.ready
         debug: false,
         appId: '',
@@ -12,8 +13,9 @@ export function autoPlay(eId) {
         nonceStr: '',
         signature: '',
         jsApiList: []
-    });
-    wx.ready(()=> {
+      });
+      wx.ready(()=> {
         document.getElementById(eId).play();
-    });
+      });
+    }
 }

@@ -5,12 +5,13 @@ import './Photograph.scss';
 import {browserHistory} from 'react-router';
 import {autoPlay} from 'util/audioAutoPlay'
 
-const bgImg = require('../../asset/images/photos/photograph-bg.jpg');
+const bgImg = require('./images/fg-two.jpg');
 const borderImg = require('./images/photo-border.png');
 const blackWhiteImg = require('./images/black-white.png');
 const blackImg = require('./images/black.jpg');
 const weddingImg = require('./images/wedding.png');
 const loveImg = require('./images/love-start.png');
+import  Back from 'components/Back/Back';
 
 const DidiMp3 = require('./audio/dididi.mp3');
 const KachaMp3 = require('./audio/kacha.mp3');
@@ -88,6 +89,7 @@ export default class Photograph extends Component {
         const animateClass = this._getAnimagetClass();
         return (
             <div className="full-page photograph-page">
+                <Back position={"back-left-top"} onClick={()=>this._goBack()}/>
                 <div className={animateClass}>
                     <img src={bgImg} className="photo"/>
                     <img src={blackWhiteImg} className="black-white"/>
@@ -95,10 +97,6 @@ export default class Photograph extends Component {
                     <div className="photograph-focus"></div>
                     <img src={blackImg} className="black-bg"/>
                     <img src={weddingImg} className="wedding"/>
-                    <div className="wedding-result">
-                        <img src={loveImg} className="love-start"/>
-                        <div className="start-button" onClick={()=>this._redirectToIntegrated()}>开启</div>
-                    </div>
                 </div>
                 <audio className="hidden" id="photograph-audio">
                     <source src="" type="audio/mpeg"/>

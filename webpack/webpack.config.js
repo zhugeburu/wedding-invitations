@@ -29,8 +29,8 @@ module.exports = {
     output: {
         path: DIST_PATH,
         /*静态资源路径*/
-        publicPath: "/",
-        filename: '[name].[chunkhash:5].chunk.js'
+        publicPath: "/public/",
+        filename: '[name].js'
     },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
@@ -48,17 +48,17 @@ module.exports = {
             title: 'Boot React',
             template: path.join(SRC_PATH, 'index.html')
         }),
-        new webpack.DefinePlugin({
-            "process.env": {
-                NODE_ENV: JSON.stringify('production')
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            compressor: {
-                warnings: false
-            }
-        }),
-        new ExtractTextPlugin('[name].[contenthash:5].chunk.css')
+        // new webpack.DefinePlugin({
+        //     "process.env": {
+        //         NODE_ENV: JSON.stringify('production')
+        //     }
+        // }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compressor: {
+        //         warnings: false
+        //     }
+        // }),
+        new ExtractTextPlugin('[name].chunk.css')
     ],
     resolve: {
         extensions: ['', '.js'],
@@ -80,7 +80,7 @@ module.exports = {
             test: /\.json/,
             loaders: ['json-loader']
         }, {
-            test: /\.(png|jpg|gif|svg)$/,
+            test: /\.(png|jpg|jpeg|gif|svg)$/,
             loader: 'url-loader?limit=8192'
         }, {
             test: /\.(mp3|ogg|m4a|ttf)$/,

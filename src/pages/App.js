@@ -4,6 +4,7 @@ import '../asset/css/common.scss';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Music from '../components/Music/Music';
 import Loading from '../components/Loading/Loading';
+import Toast from 'react-toast-mobile';
 
 export default class App extends Component {
 
@@ -14,6 +15,7 @@ export default class App extends Component {
 
         return (
             <div id="root">
+                <Toast/>
                 {loading}
                 <Music path={this.props.routes[1].path}/>
                 <ReactCSSTransitionGroup

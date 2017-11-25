@@ -10,9 +10,10 @@ import {browserHistory} from 'react-router';
 import Back from '../../components/Back/Back';
 import BgImg from '../../components/BgImg/BgImg';
 
-const bgImg = require('./images/bg.jpg');
+const phoneTop = require('./images/phone-top.png');
+const phoneBottom = require('./images/phone-bottom.png');
+
 const itemImg = require('./images/phone-item.jpg');
-const returnImg = require('../../asset/images/return.png');
 
 const audioMp3 = require('./audio/dong.mp3');
 
@@ -41,20 +42,20 @@ export default class Dialing extends Component {
     render() {
         return (
             <div className="full-page dialing-page">
-                <BgImg src={bgImg} animate={false}/>
-                <a className="dialing-item dialing-item-1" href="tel:18868875314">
+              <img src={phoneTop} alt="" className='phone-top'/>
+                <a className="dialing-item dialing-item-1" href="tel:18767104460">
                     <img src={itemImg}/>
                     <p>新郎</p>
                 </a>
-                <a className="dialing-item dialing-item-2" href="tel:18768137605">
+                <a className="dialing-item dialing-item-2" href="tel:18767138044">
                     <img src={itemImg}/>
                     <p>新娘</p>
                 </a>
                 <Back />
-                <img className="return" src={returnImg} onClick={()=>this._goBack()}/>
                 <audio className="hidden" id="dialing-audio">
                     <source src={audioMp3} type="audio/mpeg"/>
                 </audio>
+              <img src={phoneBottom} alt=""  className='phone-bottom'/>
             </div>
         )
     }

@@ -8,7 +8,7 @@ import BgImg from '../../components/BgImg/BgImg';
 import './Talk.scss';
 import {autoPlay} from 'util/audioAutoPlay'
 
-const bgImg = require('../../asset/images/photos/talk-bg.jpg');
+const bgImg = require('./images/star-sky.jpg');
 const functionImg = require('./images/function.png');
 const hungUpImg = require('./images/hung-up.png');
 const boyMp3 = require('../../asset/audio/talk.mp3');
@@ -40,7 +40,7 @@ export default class Talk extends Component {
     }
 
     _countDown(timestamp) {
-        var endTimestamp = 1577808000;
+        var endTimestamp = +new Date("Sun Dec 17 2017 11:00:00 GMT+0800 (CST)")/1000;
         if (timestamp == 0 || timestamp >= endTimestamp) {
             return '';
         }

@@ -15,6 +15,7 @@ export default class Back extends Component {
     }
 
     _goBack() {
+        window.browserHistory = browserHistory
         browserHistory.goBack(-1);
     }
 

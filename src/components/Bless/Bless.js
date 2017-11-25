@@ -6,8 +6,7 @@ import React, {Component} from 'react';
 import './Bless.scss';
 import {getBless, commitBless} from '../../reducers/bless/bless'
 import {connect} from 'react-redux';
-
-import {browserHistory} from 'react-router';
+import {T} from 'react-toast-mobile';
 
 @connect(
     state => ({bless: state.bless}),
@@ -41,19 +40,19 @@ export default class Bless extends Component {
         const name = this.refs.blessName.value;
         const text = this.refs.blessText.value;
         if (name == '') {
-            alert('留下你的大名~~');
+            T.notify('写个名字吧，好让我们知道~');
             return;
         }
         if (name.length > 24) {
-            alert('你名字填短点吧，放不下了~');
+            T.notify('你的网名有点长呀~');
             return;
         }
         if (text == '') {
-            alert('说点什么吧~亲。');
+            T.notify('快夸夸我们，祝福我们吧~。');
             return;
         }
         if (text.length > 200) {
-            alert('祝福最多200个字，太多了放不下啊~');
+            T.notify('祝福太多啦~');
             return;
         }
         this.props.commitBless(name, text, ()=>this._restText());
@@ -64,9 +63,9 @@ export default class Bless extends Component {
             const itemClassName = index % 2 == 0 ? "bless-item bless-item-left" : "bless-item bless-item-right";
             return (
                 <div className={itemClassName} key={index}>
-                    姓名：{item.name}（{item.time}）
+                    <span className="name-label">{item.name}（{item.time}）</span>
                     <br />
-                    祝福：{item.text}
+                    {item.content}
                 </div>
             );
         });

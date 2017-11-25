@@ -23,7 +23,11 @@ module.exports = {
     output: {
         path: DIST_PATH,
         filename: 'bundle.js',
+<<<<<<< HEAD
         publicPath: 'http://127.0.0.1:8081/'
+=======
+        publicPath: '/public/'
+>>>>>>> daily/1.0.0
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
@@ -54,7 +58,7 @@ module.exports = {
             test: /\.json/,
             loaders: ['json-loader']
         }, {
-            test: /\.(png|jpg|gif)$/,
+            test: /\.(png|jpg|gif|svg)$/,
             loader: 'url-loader?limit=8192'
         }, {
             test: /\.(mp3|ogg|m4a|ttf)$/,
