@@ -71,6 +71,7 @@
     "express": "^4.16.2",
     "file-loader": "^0.9.0",
     "http-proxy-middleware": "^0.17.4",
+    "jssha": "1.6.0",
     "moment": "^2.19.2",
     "mongodb": "^2.2.33",
     "react": "^15.2.1",
