@@ -9,6 +9,28 @@ app.use('/bless', proxy({
   changeOrigin: true
 }));
 
+app.get('/MP_verify_i1PVkjWm9MeQhtBh.txt', function (req, res) {
+  var options = {
+    root: __dirname,
+    dotfiles: 'deny',
+    headers: {
+      'x-timestamp': Date.now(),
+      'x-sent': true
+    }
+  };
+
+  var fileName = 'MP_verify_i1PVkjWm9MeQhtBh.txt';
+  res.sendFile(fileName, options, function (err) {
+    if (err) {
+      console.log(err);
+      res.status(err.status).end();
+    }
+    else {
+      console.log('Sent:', fileName);
+    }
+  });
+})
+
 // 找不到路由时，默认返回该'请求，非路径'下的内容，前端路由发现会监听URL，然后转换到对应模块
 app.use(history({
   index: '/public/index.html'
