@@ -18,7 +18,7 @@ export function autoPlay(eId) {
           wx.config({
             // 配置信息, 即使不正确也能使用 wx.ready
             debug: true,
-            nonceStr: config.nonceStr,
+            nonceStr: config.noncestr,
             timestamp: config.timestamp,
             signature: config.signature,
             appId: config.appId,
