@@ -22,6 +22,7 @@ export function autoPlay(eId) {
             signature: config.signature,
             appId: config.appId,
             jsApiList: [
+              'checkJsApi',
               'onMenuShareTimeline',
               'onMenuShareAppMessage'
             ]
@@ -31,10 +32,10 @@ export function autoPlay(eId) {
       wx.ready(()=> {
         document.getElementById(eId).play();
         var shareConfig = {
-          title: '1111',
-          desc: '2222',
-          link: 'http://www.if-elseif-else.com/', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-          imgUrl: 'http://www.if-elseif-else.com/public/6446346c790e485afdd7c74bd75ba5c2.png',
+          title: '相约98.  “码”上中奖 ',
+          desc: '我们诚挚邀请您莅临第十九届投洽会三维码科技体验馆，体验不一样的三维码时代产品，更有多重好礼等您来！',
+          link: 'http://www.if-elseif-else.com',
+          imgUrl: 'http://www.if-elseif-else.com/asset/images/share.jpg',
           success: function () {
             alert('success')
           },
