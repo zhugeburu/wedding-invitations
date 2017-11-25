@@ -64,10 +64,13 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-polyfill": "^6.20.0",
+    "body-parser": "^1.18.2",
     "es6-promise": "^4.0.5",
     "express": "^4.16.2",
     "file-loader": "^0.9.0",
     "http-proxy-middleware": "^0.17.4",
+    "moment": "^2.19.2",
+    "mongodb": "^2.2.33",
     "react": "^15.2.1",
     "react-addons-css-transition-group": "^15.4.1",
     "react-dom": "^15.2.1",

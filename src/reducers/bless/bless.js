@@ -45,15 +45,18 @@ export function getBless() {
     return {
         //type: GET_BLESS_SUCCESS
         types: [GET_BLESS, GET_BLESS_SUCCESS, GET_BLESS_FAIL],
-        promise: client=>client.post(`/bless/getBless.php`),
+        promise: client=>client.get(`/bless/list?pageSize=200&pageNum=1`),
     }
 }
 
-export function commitBless(name, text, callback) {
+export function commitBless(name, content, callback) {
     return {
         //type: GET_BLESS_SUCCESS
         types: [COMMIT_BLESS, COMMIT_BLESS_SUCCESS, COMMIT_BLESS_FAIL],
-        promise: client=>client.post(`/bless/commitBless.php?name=${name}&text=${text}`,),
+        promise: client=>client.post(`/bless/add`, {
+            name: name,
+            content: content
+        }),
         afterSuccess: (dispatch, getState, response)=> {
             console.log(response.data);
             if (response.data.success) {

@@ -1,41 +1,41 @@
 var DB = require('./db'),
-  url = require("url"),
-  util = require("util"),
-  moment = require("moment"),
-  querystring = require("querystring");
+  moment = require("moment");
 
 class Bless extends DB {
-  save(request, response) {
-    var str = '';
-
-    request.on("data", function(chunk) {
-      str += decodeURIComponent(chunk);
-    });
-
-    request.on("end", function() {
-      var param = querystring.parse(str);
-      var data = {};
-      var now = moment().format('YYYY-MM-DD HH:mm:ss');
-
-      data.author = param.author;
-      data.msg = param.msg;
-      data.dtime = now;
-
-      db.save(data, function(result) {
-        response.writeHead(200, {"Content-Type": "application/json"});
-        response.write(util.format('%j', result));
-        response.end();
-      });
+  add(req, res) {
+    super.add({
+      name: req.body.name,
+      content: req.body.content,
+      time: moment().format('YYYY-MM-DD HH:mm')
+    }).then(function(result) {
+      res.json({
+        code: 200,
+        data: true
+      })
+    }).catch(function (error) {
+      res.json({
+        code: -1,
+        data: false,
+        msg: '请稍后，服务器好像有点小情绪~'
+      })
     });
   }
 
-  list(request, response) {
-    var param = url.parse(request.url, true).query;
-
-    db.list(param.page, function(result) {
-      response.writeHead(200, {"Content-Type": "application/json"});
-      response.write(util.format('%j', result));
-      response.end();
+  list(req, res) {
+    super.list({
+      pageSize: req.query.pageSize,
+      pageNum: req.query.pageNum
+    }).then(function(result) {
+      res.json({
+        code: 200,
+        data: result
+      })
+    }).catch(function (error) {
+      res.json({
+        code: -1,
+        data: [],
+        msg: '请稍后，服务器好像有点小情绪~'
+      })
     });
 
   }

@@ -9,45 +9,55 @@ class DB {
     this._colName = colName
   }
 
-  save (data, callback) {
-    MongoClient.connect(url, function(err, db) {
-      if (err) {
-        console.log(err);
-      } else {
-        var collection = db.collection(this._colName);
+  add (data) {
+    var that = this
+    return new Promise(function (resolve, reject) {
+      MongoClient.connect(url, function(err, db) {
+        if (err) {
+          console.log(err);
+          reject(err);
+        } else {
+          var collection = db.collection(that._colName);
 
-        collection.insert(data, function(err, result) {
-          if (err) {
-            console.log(err);
-          } else {
-            console.log("insert success");
-            console.log(data)
-            callback && callback(result);
-            db.close();
-          }
-        });
-      }
+          collection.insert(data, function(err, result) {
+            if (err) {
+              console.log(err);
+              reject(err);
+            } else {
+              console.log("add success");
+              console.log(data)
+              resolve(result)
+              db.close();
+            }
+          });
+        }
+      })
     })
 	}
 
-	list ({ pageSize, pageNum }, callback) {
-    MongoClient.connect(url, function(err, db) {
-      if (err) {
-        console.log(err);
-      } else {
-        var collection = db.collection(this._colName);
+	list ({ pageSize, pageNum }) {
+    var that = this
+    return new Promise(function (resolve, reject) {
+      MongoClient.connect(url, function(err, db) {
+        if (err) {
+          console.log(err);
+          reject(err)
+        } else {
+          var collection = db.collection(that._colName);
 
-        collection.find({},{limit: pageSize, skip: (pageNum - 1) * pageSize}).sort({dtime:-1}).toArray(function(err, result) {
-          if (err) {
-            console.log(err);
-          } else {
-            console.log("get list success");
-            console.log(result);
-            callback && callback(result);
-            db.close();
-          }
-        })
-      }
+          collection.find({},{limit: pageSize, skip: (pageNum - 1) * pageSize}).sort({time: -1}).toArray(function(err, result) {
+            if (err) {
+              console.log(err);
+              reject(err)
+            } else {
+              console.log("get list success");
+              console.log(result);
+              resolve(result)
+              db.close();
+            }
+          })
+        }
+      })
     })
 	}
 }
