@@ -48,7 +48,7 @@ export default class Bless extends Component {
             return;
         }
         if (text == '') {
-            T.notify('快夸夸我们，祝福我们吧~。');
+            T.notify('快祝福我们，夸夸我们吧~');
             return;
         }
         if (text.length > 200) {

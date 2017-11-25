@@ -7,12 +7,15 @@ export function autoPlay(eId) {
     if (wx) {
       wx.config({
         // 配置信息, 即使不正确也能使用 wx.ready
-        debug: false,
-        appId: '',
+        debug: true,
+        appId: 'gh_0eaa34501fff',
         timestamp: 1,
         nonceStr: '',
         signature: '',
-        jsApiList: []
+        jsApiList: [
+          'onMenuShareTimeline',
+          'onMenuShareAppMessage'
+        ]
       });
       wx.ready(()=> {
         document.getElementById(eId).play();
