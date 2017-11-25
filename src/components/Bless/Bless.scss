@@ -36,7 +36,7 @@
         border: none;
         background-color: rgba(255, 255, 255, 0.8);
         font-size: 0.4rem;
-        padding: 0 0.1rem;
+        padding: 0 0.11rem;
         border-right: 1px solid #ccc;
         border-radius: 0;
       }
@@ -106,7 +106,7 @@
       word-wrap: break-word;
       word-break: break-all;
       margin-bottom: 0.45rem;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.85);
       border-radius: 6px;
       padding: 0.2rem;
       color: #333;
@@ -125,6 +125,9 @@
     .name-label {
       color: #555;
       line-height: 0.6rem;
+    }
+    .time-lable{
+      font-size: 0.27rem;
     }
   }
 }

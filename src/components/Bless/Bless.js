@@ -63,7 +63,7 @@ export default class Bless extends Component {
             const itemClassName = index % 2 == 0 ? "bless-item bless-item-left" : "bless-item bless-item-right";
             return (
                 <div className={itemClassName} key={index}>
-                    <span className="name-label">{item.name}（{item.time}）</span>
+                    <span className="name-label">{item.name}<span className="time-lable">{item.time}</span></span>
                     <br />
                     {item.content}
                 </div>
