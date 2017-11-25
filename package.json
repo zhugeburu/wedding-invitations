@@ -6,7 +6,8 @@
   "scripts": {
     "start-html": "node app.js",
     "start-server": "node server/index.js",
-    "start": "npm run start-html & npm run start-server",
+    "start-share": "node wechat-share/index.js",
+    "start": "npm run start-html & npm run start-server && start-share",
     "build": "cross-env NODE_ENV=production webpack -p --optimize-dedupe --display-modules --sort-modules-by size --config webpack/webpack.config.js",
     "build:watch": "cross-env NODE_ENV=production webpack --watch -p --optimize-dedupe --display-modules --sort-modules-by size --config webpack/webpack.config.js"
   },
