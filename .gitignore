@@ -49,4 +49,4 @@ Temporary Items
 /.idea
 cache/*
 /node_modules
-/wechat-share
+/wechat-share/*
