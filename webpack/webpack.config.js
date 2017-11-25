@@ -48,16 +48,16 @@ module.exports = {
             title: 'Boot React',
             template: path.join(SRC_PATH, 'index.html')
         }),
-        new webpack.DefinePlugin({
-            "process.env": {
-                NODE_ENV: JSON.stringify('production')
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            compressor: {
-                warnings: false
-            }
-        }),
+        // new webpack.DefinePlugin({
+        //     "process.env": {
+        //         NODE_ENV: JSON.stringify('production')
+        //     }
+        // }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compressor: {
+        //         warnings: false
+        //     }
+        // }),
         new ExtractTextPlugin('[name].chunk.css')
     ],
     resolve: {

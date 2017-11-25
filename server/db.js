@@ -1,5 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = require('./config')['dbUrl'];
+var moment = require("moment");
 
 class DB {
   constructor (obj) {
@@ -24,8 +25,7 @@ class DB {
               console.log(err);
               reject(err);
             } else {
-              console.log("add success");
-              console.log(data)
+              console.log("add success", moment().format('YYYY-MM-DD HH:mm:ss'));
               resolve(result)
               db.close();
             }
@@ -50,8 +50,7 @@ class DB {
               console.log(err);
               reject(err)
             } else {
-              console.log("get list success");
-              console.log(result);
+              console.log("get list success", moment().format('YYYY-MM-DD HH:mm:ss'));
               resolve(result)
               db.close();
             }
