@@ -63,20 +63,20 @@ export default class Bless extends Component {
     }
 
     render() {
-        // const blessPanel = this.props.bless.blesses.map((item, index)=> {
-        const blessPanel = Array.apply('', new Array(10)).map(function (item) {
-            return {
-                name: '陈清华',
-                text: '你好吗你好么你好吗你好么',
-                time: '2017-12-04 23:00'
-            }
-        }).map((item, index)=> {
+        const blessPanel = this.props.bless.blesses.map((item, index)=> {
+        // const blessPanel = Array.apply('', new Array(10)).map(function (item) {
+        //     return {
+        //         name: '陈清华',
+        //         text: '你好吗你好么你好吗你好么哈哈哈哈哈哈哈哈哈或哈哈哈哈哈哈哈哈哈',
+        //         time: '2017-12-04 23:00'
+        //     }
+        // }).map((item, index)=> {
             const itemClassName = index % 2 == 0 ? "bless-item bless-item-left" : "bless-item bless-item-right";
             return (
                 <div className={itemClassName} key={index}>
-                    姓名：{item.name}（{item.time}）
+                    <span className="name-label">{item.name}（{item.time}）</span>
                     <br />
-                    祝福：{item.text}
+                    {item.text}
                 </div>
             );
         });
