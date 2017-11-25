@@ -9,6 +9,7 @@ app.use('/bless', proxy({
   changeOrigin: true
 }));
 
+// 微信开发者-JS接口安全域名
 app.get('/MP_verify_i1PVkjWm9MeQhtBh.txt', function (req, res) {
   var options = {
     root: __dirname,
@@ -18,7 +19,6 @@ app.get('/MP_verify_i1PVkjWm9MeQhtBh.txt', function (req, res) {
       'x-sent': true
     }
   };
-
   var fileName = 'MP_verify_i1PVkjWm9MeQhtBh.txt';
   res.sendFile(fileName, options, function (err) {
     if (err) {
