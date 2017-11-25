@@ -49,13 +49,14 @@ export function getBless() {
     }
 }
 
-export function commitBless(name, content, callback) {
+export function commitBless(name, content, number, callback) {
     return {
         //type: GET_BLESS_SUCCESS
         types: [COMMIT_BLESS, COMMIT_BLESS_SUCCESS, COMMIT_BLESS_FAIL],
         promise: client=>client.post(`/bless/add`, {
             name: name,
-            content: content
+            content: content,
+            number: number
         }),
         afterSuccess: (dispatch, getState, result)=> {
             if (result.code == 200) {

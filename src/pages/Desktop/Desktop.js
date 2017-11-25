@@ -153,17 +153,17 @@ export default class Desktop extends Component {
                 <div className="bg">
                     {/*上部热定区*/}
                     <div className="top-box">
-                      <TopHotSpot left="0rem" bottomText={'日期'}  click={()=>this._redirectToUrl('/integrated')}/>
-                      <TopHotSpot left="1.85rem" bottomText={'视频'} click={()=>this._openVideo()}/>
-                      <TopHotSpot left="3.7rem" bottomText={'相册'} click={()=>this._redirectToUrl('/photos')}/>
-                      <TopHotSpot left="5.55rem" bottomText={'祝福'} click={()=>this._openBless()}/>
-                      <div className="top-icon data-icon">
+                        <TopHotSpot left="0rem" bottomText={'日期'}  click={()=>this._redirectToUrl('/integrated')}/>
+                        <TopHotSpot left="1.85rem" bottomText={'祝福'} click={()=>this._openBless()}/>
+                        <TopHotSpot left="3.7rem" bottomText={'相册'} click={()=>this._redirectToUrl('/photos')}/>
+                        <TopHotSpot left="5.55rem" bottomText={'视频'} click={()=>this._openVideo()}/>
+                        <div className="top-icon data-icon">
                         <span className='day'>星期日</span>
                         <span className='num'>17</span>
                       </div>
-                      <img src={video} className="top-icon video-icon"/>
-                      <img src={photo} className="top-icon"/>
-                      <img src={weibo} className="top-icon"/>
+                        <img src={weibo} className="top-icon"/>
+                        <img src={photo} className="top-icon"/>
+                        <img src={video} className="top-icon video-icon"/>
                     </div>
 
 
