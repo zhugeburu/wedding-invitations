@@ -7,8 +7,6 @@ import './Bless.scss';
 import {getBless, commitBless} from '../../reducers/bless/bless'
 import {connect} from 'react-redux';
 
-import {browserHistory} from 'react-router';
-
 @connect(
     state => ({bless: state.bless}),
     {getBless, commitBless}
@@ -66,7 +64,7 @@ export default class Bless extends Component {
                 <div className={itemClassName} key={index}>
                     姓名：{item.name}（{item.time}）
                     <br />
-                    祝福：{item.text}
+                    祝福：{item.content}
                 </div>
             );
         });

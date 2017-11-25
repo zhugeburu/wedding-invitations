@@ -57,15 +57,14 @@ export function commitBless(name, content, callback) {
             name: name,
             content: content
         }),
-        afterSuccess: (dispatch, getState, response)=> {
-            console.log(response.data);
-            if (response.data.success) {
+        afterSuccess: (dispatch, getState, result)=> {
+            if (result.code == 200) {
                 if (callback) {
                     callback();
                 }
                 dispatch(getBless());
             } else {
-                alert("提交失败!");
+                alert(result.msg || '抱歉，提交失败啦');
             }
         }
     }
