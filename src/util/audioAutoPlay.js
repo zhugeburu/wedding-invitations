@@ -34,7 +34,7 @@ export function autoPlay(eId) {
           title: '1111',
           desc: '2222',
           link: 'http://www.if-elseif-else.com/', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-          imgUrl: 'http://qnm.hunliji.com/o_1bniiv6lv1lnf1rcoa6u1ipfueul.jpg?imageView2/1/w/200/h/200',
+          imgUrl: 'http://www.if-elseif-else.com/public/6446346c790e485afdd7c74bd75ba5c2.png',
           success: function () {
             alert('success')
           },
@@ -45,6 +45,9 @@ export function autoPlay(eId) {
         }
         wx.onMenuShareAppMessage(shareConfig);
         wx.onMenuShareTimeline(shareConfig);
+      });
+      wx.error(function(res){
+        alert(JSON.stringify(res) + 'errpr')
       });
     }
 }
