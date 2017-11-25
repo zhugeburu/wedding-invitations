@@ -5,7 +5,6 @@
 /*ios微信音频不能自动播放问题解决*/
 export function autoPlay(eId) {
     if (wx) {
-      alert(2)
       $.ajax({
         type: 'POST',
         url: '/wechat/signature',
