@@ -5,18 +5,31 @@
 /*ios微信音频不能自动播放问题解决*/
 export function autoPlay(eId) {
     if (wx) {
-      wx.config({
-        // 配置信息, 即使不正确也能使用 wx.ready
-        debug: true,
-        appId: 'gh_0eaa34501fff',
-        timestamp: 1,
-        nonceStr: '',
-        signature: '',
-        jsApiList: [
-          'onMenuShareTimeline',
-          'onMenuShareAppMessage'
-        ]
-      });
+      alert(2)
+      $.ajax({
+        type: 'POST',
+        url: '/wechat/signature',
+        data: {
+          url: window.location.href.split('#')[0]
+        }
+      }).then(function (result) {
+        alert(JSON.stringify(result))
+        if (result.code === 200) {
+          var config = result.data || {}
+          wx.config({
+            // 配置信息, 即使不正确也能使用 wx.ready
+            debug: true,
+            nonceStr: config.nonceStr,
+            timestamp: config.timestamp,
+            signature: config.signature,
+            appId: config.appId,
+            jsApiList: [
+              'onMenuShareTimeline',
+              'onMenuShareAppMessage'
+            ]
+          });
+        }
+      })
       wx.ready(()=> {
         document.getElementById(eId).play();
         var shareConfig = {
