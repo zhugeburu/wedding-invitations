@@ -37,18 +37,18 @@ export function autoPlay(eId) {
           link: 'http://www.if-elseif-else.com',
           imgUrl: 'http://www.if-elseif-else.com/asset/images/share.jpg',
           success: function () {
-            alert('success')
+            // alert('success')
           },
 
           cancel: function () {
-            alert('cancel')
+            // alert('cancel')
           }
         }
         wx.onMenuShareAppMessage(shareConfig);
         wx.onMenuShareTimeline(shareConfig);
       });
       wx.error(function(res){
-        alert(JSON.stringify(res) + 'errpr')
+        // alert(JSON.stringify(res) + 'errpr')
       });
     }
 }
