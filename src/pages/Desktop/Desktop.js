@@ -154,9 +154,9 @@ export default class Desktop extends Component {
                     {/*上部热定区*/}
                     <div className="top-box">
                         <TopHotSpot left="0rem" bottomText={'日期'}  click={()=>this._redirectToUrl('/integrated')}/>
-                        <TopHotSpot left="1.85rem" bottomText={'祝福'} click={()=>this._openBless()}/>
-                        <TopHotSpot left="3.7rem" bottomText={'相册'} click={()=>this._redirectToUrl('/photos')}/>
-                        <TopHotSpot left="5.55rem" bottomText={'视频'} click={()=>this._openVideo()}/>
+                        <TopHotSpot left="1.8rem" bottomText={'祝福'} click={()=>this._openBless()}/>
+                        <TopHotSpot left="3.6rem" bottomText={'相册'} click={()=>this._redirectToUrl('/photos')}/>
+                        <TopHotSpot left="5.37rem" bottomText={'视频'} click={()=>this._openVideo()}/>
                         <div className="top-icon data-icon">
                         <span className='day'>星期日</span>
                         <span className='num'>17</span>
@@ -170,10 +170,10 @@ export default class Desktop extends Component {
 
                     <div className="white-bottom">
                       {/*下部热点区*/}
-                      <BottomHotSpot count={2} left="0rem" animateType={2} toUrl={'/dialing'}/>
-                      <BottomHotSpot count={1} left="1.8rem" animateType={2} toUrl={'/wechat'}/>
-                      <BottomHotSpot count={3} left="3.65rem" animateType={1} toUrl={'/photograph'}/>
-                      <BottomHotSpot count={1} left="5.5rem" toUrl={'/map'}/>
+                      <BottomHotSpot count={2} left="-0.1rem" animateType={2} toUrl={'/dialing'}/>
+                      <BottomHotSpot count={1} left="1.66rem" animateType={2} toUrl={'/wechat'}/>
+                      <BottomHotSpot count={3} left="3.46rem" animateType={1} toUrl={'/photograph'}/>
+                      <BottomHotSpot count={1} left="5.24rem" toUrl={'/map'}/>
                       <img src={phone} className="bottom-icon"/>
                       <img src={wechat} className="bottom-icon"/>
                       <img src={didi} className="bottom-icon"/>
@@ -190,7 +190,7 @@ export default class Desktop extends Component {
                     <div className='video'>
                         <img src={backImg} className="back" onClick={()=>this._closeVideo()}/>
                         <img src={closeImg} className="close" onClick={()=>this._closeVideo()}/>
-                        <iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=a0500oiudqk&tiny=0&auto=0" allowfullscreen></iframe>
+                        <iframe height='498' width='640' src='http://player.youku.com/embed/XMzE2OTcwMTkxNg==' frameborder='0' allowfullscreen></iframe>
                     </div>
                     :
                     ''
