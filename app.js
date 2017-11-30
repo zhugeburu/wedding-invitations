@@ -15,7 +15,7 @@ app.use('/wechat', proxy({
 }));
 
 // 微信开发者-JS接口安全域名
-app.get('/MP_verify_i1PVkjWm9MeQhtBh.txt', function (req, res) {
+app.get('/MP_verify_GpkFipVh3BwHq8kO.txt', function (req, res) {
   var options = {
     root: __dirname,
     dotfiles: 'deny',
@@ -24,7 +24,7 @@ app.get('/MP_verify_i1PVkjWm9MeQhtBh.txt', function (req, res) {
       'x-sent': true
     }
   };
-  var fileName = 'MP_verify_i1PVkjWm9MeQhtBh.txt';
+  var fileName = 'MP_verify_GpkFipVh3BwHq8kO.txt';
   res.sendFile(fileName, options, function (err) {
     if (err) {
       console.log(err);
