@@ -35,7 +35,7 @@ export function autoPlay(eId) {
           title: '陈钦辉&项璐露',
           desc: '这个一条让你又爱又疼的消息，等你的祝福，等你的到来',
           link: 'http://www.if-elseif-else.com',
-          imgUrl: 'http://www.if-elseif-else.com/asset/images/share.jpg',
+          imgUrl: 'http://www.if-elseif-else.com/asset/images/share-icon.jpg',
           success: function () {
             // alert('success')
           },
