@@ -32,7 +32,7 @@ export function autoPlay(eId) {
       wx.ready(()=> {
         document.getElementById(eId).play();
         var shareConfig = {
-          title: '陈钦辉&项璐露',
+          title: '陈钦辉1024项璐露',
           desc: '这个一条让你又爱又疼的消息，等着你的祝福，等着你的到来',
           link: 'http://www.if-elseif-else.com',
           imgUrl: 'http://www.if-elseif-else.com/asset/images/share-icon.jpg',
