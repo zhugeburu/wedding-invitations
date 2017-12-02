@@ -58,9 +58,10 @@ class BottomHotSpot extends Component {
 
     render() {
         const countImg = this._getCountImg(this.props.count);
+        const index = this.props.index
         const redPointClassName = this.props.animateType ? `red-point  red-point-animate-${this.props.animateType}` : `red-point`;
         return (
-            <div className="bottom-hot-spot" style={{left: this.props.left}}
+            <div className="bottom-hot-spot" id={'bottom-hot='+index} style={{left: this.props.left}}
                  onClick={()=>this._redirectToUrl(this.props.toUrl)}>
                 <img className={redPointClassName} src={countImg}/>
             </div>
@@ -78,8 +79,9 @@ class TopHotSpot extends Component {
         const topText = this.props.topText;
         const middleText = this.props.middleText;
         const bottomText = this.props.bottomText;
+        const index = this.props.index;
         return (
-            <div className="top-hot-spot" style={{left: this.props.left}} onClick={()=>this.props.click()}>
+            <div className="top-hot-spot" id={'top-host-' + index} style={{left: this.props.left}} onClick={()=>this.props.click()}>
                 {topText ?
                     <div className="top-text">{topText}</div>
                     :
@@ -157,10 +159,10 @@ export default class Desktop extends Component {
                 <div className="bg">
                     {/*上部热定区*/}
                     <div className="top-box">
-                        <TopHotSpot left="0rem" bottomText={'日期'}  click={()=>this._redirectToUrl('/integrated')}/>
-                        <TopHotSpot left="1.8rem" bottomText={'祝福'} click={()=>this._openBless()}/>
-                        <TopHotSpot left="3.6rem" bottomText={'相册'} click={()=>this._redirectToUrl('/photos')}/>
-                        <TopHotSpot left="5.37rem" bottomText={'视频'} click={()=>this._openVideo()}/>
+                        <TopHotSpot left="0rem" bottomText={'日期'}  index='1' click={()=>this._redirectToUrl('/integrated')}/>
+                        <TopHotSpot left="1.8rem" bottomText={'祝福'}index='2'  click={()=>this._openBless()}/>
+                        <TopHotSpot left="3.6rem" bottomText={'相册'} index='3' click={()=>this._redirectToUrl('/photos')}/>
+                        <TopHotSpot left="5.37rem" bottomText={'视频'} index='4' click={()=>this._openVideo()}/>
                         <div className="top-icon data-icon">
                         <span className='day'>星期日</span>
                         <span className='num'>17</span>
@@ -174,10 +176,10 @@ export default class Desktop extends Component {
 
                     <div className="white-bottom">
                       {/*下部热点区*/}
-                      <BottomHotSpot count={2} left="-0.1rem" animateType={2} toUrl={'/dialing'}/>
-                      <BottomHotSpot count={1} left="1.66rem" animateType={2} toUrl={'/wechatbar'}/>
-                      <BottomHotSpot count={3} left="3.46rem" animateType={1} toUrl={'/photograph'}/>
-                      <BottomHotSpot count={1} left="5.24rem" toUrl={'/map'}/>
+                      <BottomHotSpot count={2} left="-0.1rem" animateType={2} index='1' toUrl={'/dialing'}/>
+                      <BottomHotSpot count={1} left="1.66rem" animateType={2} index='2' toUrl={'/wechatbar'}/>
+                      <BottomHotSpot count={3} left="3.46rem" animateType={1} index='3' toUrl={'/photograph'}/>
+                      <BottomHotSpot count={1} left="5.24rem" index='4' toUrl={'/map'}/>
                       <img src={phone} className="bottom-icon"/>
                       <img src={wechat} className="bottom-icon"/>
                       <img src={didi} className="bottom-icon"/>
