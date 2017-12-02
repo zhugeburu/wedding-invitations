@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import './Loading.scss';
 
-const loadingImg = require('../../asset/images/loading.svg');
+const loadingImg = require('../../asset/images/loading-old.svg');
 
 export default class Loading extends Component {
     render() {
