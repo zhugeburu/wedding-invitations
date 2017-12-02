@@ -17,8 +17,8 @@ const bgImg = require('./images/bg.png');
 const boyImg = require('../../asset/images/photos/wechat-boy.jpg');
 const girlImg = require('../../asset/images/photos/wechat-girl.jpg');
 
-const boyAudioMp3 = require('../../asset/audio/wechat-boy.mp3');
-const girlAudioMp3 = require('../../asset/audio/wechat-girl.mp3');
+const boyAudioMp4 = require('../../asset/audio/wechat-boy.mp4');
+const girlAudioMp4 = require('../../asset/audio/wechat-girl.mp4');
 
 class WechatItem extends Component {
 
@@ -47,13 +47,13 @@ export default class Wechat extends Component {
 
     _playBoyAudio() {
         const audioElement = document.getElementById('wechat-audio');
-        audioElement.src = boyAudioMp3;
+        audioElement.src = boyAudioMp4;
         audioElement.play();
     }
 
     _playGirlAudio() {
         const audioElement = document.getElementById('wechat-audio');
-        audioElement.src = girlAudioMp3;
+        audioElement.src = girlAudioMp4;
         audioElement.play();
     }
 

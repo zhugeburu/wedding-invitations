@@ -11,8 +11,7 @@ import {autoPlay} from 'util/audioAutoPlay'
 const bgImg = require('./images/star-sky.jpg');
 const functionImg = require('./images/function.png');
 const hungUpImg = require('./images/hung-up.png');
-const boyMp3 = require('../../asset/audio/talk.mp3');
-const girlMp3 = require('../../asset/audio/talk-girl.mp3');
+const callMp4 = require('../../asset/audio/call.mp4');
 export default class Talk extends Component {
     constructor(props) {
         super(props);
@@ -74,7 +73,7 @@ export default class Talk extends Component {
                     </div>
                 </div>
                 <audio className="hidden" id="talk-audio">
-                    <source src={userType == 'boy' ? boyMp3 : girlMp3} type="audio/mpeg"/>
+                    <source src={callMp4} type="audio/mpeg"/>
                 </audio>
             </div>
         )
