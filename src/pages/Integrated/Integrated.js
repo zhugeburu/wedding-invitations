@@ -12,7 +12,6 @@ const bgImg = require('./images/9icon.jpg');
 
 const circle1Img = require('./images/circle-1.png');
 const circle2Img = require('./images/circle-2.png');
-const whiteCircleImg = require('./images/white-circle.png');
 
 class IntegratedItem extends Component {
 
@@ -65,7 +64,6 @@ export default class Integrated extends Component {
                 <BgImg src={bgImg} animate={false}/>
                 <div className="bg">
                     <Back position={"integrated-back"}/>
-                    <img src={whiteCircleImg} className="white-circle"/>
                     <div className="text-content">
                         <p>各位坑友们：</p>
                         <p>诚挚地邀请您于2017年12月17日，星期日，11:00参加陈钦辉与项璐露的结婚典礼。</p>

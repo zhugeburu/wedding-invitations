@@ -27,7 +27,7 @@ export default (store) => {
             { /* 通话记录页面 */ }
             <Route path="dialing" component={Dialing}/>
             { /* 微信页面 */ }
-            <Route path="wechat" component={Wechat}/>
+            <Route path="wechatbar" component={Wechat}/>
             { /* 地图页面 */ }
             <Route path="map" component={Map}/>
             { /* 相册页面 */ }

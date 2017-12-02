@@ -68,8 +68,10 @@ export default class Talk extends Component {
                 <div className="bg">
                     <div className="count-down-title">婚礼倒计时</div>
                     <div className="count-down-time">{countDown}</div>
-                    <img className="function" src={functionImg}/>
-                    <img className="hung-up" src={hungUpImg} onClick={()=>this._redirectToDesktop()}/>
+                    <div className="img-box">
+                        <img className="function" src={functionImg}/>
+                        <img className="hung-up" src={hungUpImg} onClick={()=>this._redirectToDesktop()}/>
+                    </div>
                 </div>
                 <audio className="hidden" id="talk-audio">
                     <source src={userType == 'boy' ? boyMp3 : girlMp3} type="audio/mpeg"/>

@@ -3,20 +3,23 @@
 .talk-page {
   .bg {
     background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
   }
-  .function {
-    position: absolute;
-    left: 0.2rem;
-    width: 7.5rem;
-    bottom: 1.5rem;
-  }
-  .hung-up {
-    position: absolute;
-    width: 2.1rem;
-    height: 2.1rem;
-    left: 50%;
-    margin-left: -1.05rem;
-    bottom: 1.5rem;
+  .img-box{
+    position: relative;
+    .function {
+      bottom: 1.5rem;
+      width: 90%;
+      text-align: center;
+    }
+    .hung-up {
+      width: 1.9rem;
+      height: 1.9rem;
+      position: absolute;
+      bottom: 0.2rem;
+      left: 50%;
+      margin-left: -1rem;
+    }
   }
   .count-down-title {
     width: 100%;
