@@ -32,8 +32,8 @@ export function autoPlay(eId) {
       wx.ready(()=> {
         document.getElementById(eId).play();
         var shareConfig = {
-          title: '相约98.  “码”上中奖 ',
-          desc: '我们诚挚邀请您莅临第十九届投洽会三维码科技体验馆，体验不一样的三维码时代产品，更有多重好礼等您来！',
+          title: '陈钦辉&项璐露',
+          desc: '这个一条让你又爱又疼的消息，等你的祝福，等你的到来',
           link: 'http://www.if-elseif-else.com',
           imgUrl: 'http://www.if-elseif-else.com/asset/images/share.jpg',
           success: function () {
@@ -44,8 +44,12 @@ export function autoPlay(eId) {
             // alert('cancel')
           }
         }
+
         wx.onMenuShareAppMessage(shareConfig);
-        wx.onMenuShareTimeline(shareConfig);
+        wx.onMenuShareTimeline($.extend(true, {}, shareConfig, {
+          title: '这个一条让你又爱又疼的消息',
+          desc: 'xxxxxx',
+        } ));
       });
       wx.error(function(res){
         // alert(JSON.stringify(res) + 'errpr')
