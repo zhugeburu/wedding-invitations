@@ -48,7 +48,7 @@ export default class Bless extends Component {
             return;
         }
         if (text == '') {
-            T.notify('快祝福我们，留下点脚印吧~');
+            T.notify('祝福还没留下呢~');
             return;
         }
         if (text.length > 200) {
@@ -56,6 +56,9 @@ export default class Bless extends Component {
             return;
         }
         this.props.commitBless(name, text, ()=>this._restText());
+        $(".bless .bottom-box").animate({
+        scrollTop: 0
+        }, 1000)
     }
 
     render() {

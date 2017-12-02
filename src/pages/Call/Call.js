@@ -31,7 +31,7 @@ export default class Call extends Component {
     }
 
     _refuse() {
-        T.notify('你挂呀你挂呀');
+        T.notify('客官，别走么~');
     }
 
     componentDidMount() {

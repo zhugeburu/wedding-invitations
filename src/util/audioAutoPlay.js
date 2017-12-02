@@ -33,9 +33,9 @@ export function autoPlay(eId) {
         document.getElementById(eId).play();
         var shareConfig = {
           title: '陈钦辉&项璐露',
-          desc: '这个一条让你又爱又疼的消息，等着你的祝福，等着你的到来',
+          desc: '这是一条让你又爱又疼的消息，等着你的祝福，等着你的到来。ps:发现bug，欢迎微信我',
           link: 'http://www.if-elseif-else.com',
-          imgUrl: 'http://www.if-elseif-else.com/asset/images/share-icon.jpg',
+          imgUrl: 'http://www.if-elseif-else.com/asset/images/share.jpg',
           success: function () {
             // alert('success')
           },
@@ -47,7 +47,7 @@ export function autoPlay(eId) {
 
         wx.onMenuShareAppMessage(shareConfig);
         wx.onMenuShareTimeline($.extend(true, {}, shareConfig, {
-          title: '这个一条让你又爱又疼的消息',
+          title: '这是一条让你又爱又疼的消息',
           desc: '',
         } ));
       });
