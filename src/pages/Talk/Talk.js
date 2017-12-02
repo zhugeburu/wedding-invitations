@@ -11,7 +11,7 @@ import {autoPlay} from 'util/audioAutoPlay'
 const bgImg = require('./images/star-sky.jpg');
 const functionImg = require('./images/function.png');
 const hungUpImg = require('./images/hung-up.png');
-const callMp4 = require('../../asset/audio/call.mp4');
+const callMp3 = require('../../asset/audio/call.mp3');
 export default class Talk extends Component {
     constructor(props) {
         super(props);
@@ -39,7 +39,7 @@ export default class Talk extends Component {
     }
 
     _countDown(timestamp) {
-        var endTimestamp = +new Date("Sun Dec 17 2017 11:00:00 GMT+0800 (CST)")/1000;
+        var endTimestamp = +new Date("Sun Dec 17 2017 11:18:00 GMT+0800 (CST)")/1000;
         if (timestamp == 0 || timestamp >= endTimestamp) {
             return '';
         }
@@ -73,7 +73,7 @@ export default class Talk extends Component {
                     </div>
                 </div>
                 <audio className="hidden" id="talk-audio">
-                    <source src={callMp4} type="audio/mpeg"/>
+                    <source src={callMp3} type="audio/mpeg"/>
                 </audio>
             </div>
         )

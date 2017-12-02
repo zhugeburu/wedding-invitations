@@ -66,11 +66,12 @@ export default class Integrated extends Component {
                     <Back position={"integrated-back"}/>
                     <div className="text-content">
                         <p>各位坑友们：</p>
-                        <p>诚挚地邀请您于2017年12月17日，星期日，11:00参加陈钦辉与项璐露的结婚典礼。</p>
+                        <p>诚挚地邀请您于2017年12月17日，星期日，11:18参加陈钦辉与项璐露的结婚典礼。</p>
                         <p>友情提醒：大红包带好，地点：湖州仁皇山花园大酒店，点击地图APP可查看</p>
                     </div>
                 </div>
             </div>
         )
+
     }
 }

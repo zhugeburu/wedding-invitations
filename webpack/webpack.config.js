@@ -83,7 +83,7 @@ module.exports = {
             test: /\.(png|jpg|jpeg|gif|svg)$/,
             loader: 'url-loader?limit=8192'
         }, {
-            test: /\.(mp3|ogg|m4a|ttf)$/,
+            test: /\.(mp4|mp3|ogg|m4a|ttf)$/,
             loader: 'file'
         }]
     },
