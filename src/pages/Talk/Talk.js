@@ -6,7 +6,7 @@ import React, {Component} from 'react';
 import {browserHistory} from 'react-router';
 import BgImg from '../../components/BgImg/BgImg';
 import './Talk.scss';
-import {autoPlay} from 'util/audioAutoPlay'
+import {autoPlay} from './../../util/audioAutoPlay'
 
 const bgImg = require('./images/star-sky.jpg');
 const functionImg = require('./images/function.png');
