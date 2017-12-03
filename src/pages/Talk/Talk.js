@@ -72,7 +72,7 @@ export default class Talk extends Component {
                         <img className="hung-up" src={hungUpImg} onClick={()=>this._redirectToDesktop()}/>
                     </div>
                 </div>
-                <audio className="hidden" id="talk-audio">
+                <audio className="hidden" id="talk-audio" autoPlay>
                     <source src={callMp3} type="audio/mpeg"/>
                 </audio>
             </div>
