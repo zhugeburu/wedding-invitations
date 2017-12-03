@@ -117,11 +117,16 @@ export default class Integrated extends Component {
         }, 16000);
 
         $("#code").typewriter();
+
+      setTimeout(function () {
         $('.integrated-page .bg-img img').css({
           'width': '3.5rem',
           'left': '2rem',
           'top': '1.5rem'
         })
+      }, 2000);
+
+
     }
 
     _redirectToInvite() {
