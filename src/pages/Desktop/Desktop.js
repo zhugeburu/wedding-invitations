@@ -33,7 +33,7 @@ const audioOgg = require('./audio/duang.ogg');
 import {T} from 'react-toast-mobile';
 
 var desRadioPlayed = false
-
+window.firstIn = true
 /*底部热点区组件*/
 class BottomHotSpot extends Component {
     /*
@@ -152,18 +152,21 @@ export default class Desktop extends Component {
         autoPlay('desktop-audio');
         desRadioPlayed = true
       }
-      var that = this
-      this.setState({
-        handShow: true
-      });
-      setTimeout(()=> {
-        T.notify('App图标都可以点击哦!');
-      }, 3000);
-      setTimeout(()=> {
+      if (window.firstIn){
+        window.firstIn = false
+        var that = this
         this.setState({
-          handShow: false
+          handShow: true
         });
-      }, 7000);
+        setTimeout(()=> {
+          T.notify('App图标都可以点击哦!');
+        }, 3000);
+        setTimeout(()=> {
+          this.setState({
+            handShow: false
+          });
+        }, 7000);
+      }
     }
 
     render() {
