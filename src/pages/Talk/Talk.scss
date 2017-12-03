@@ -20,6 +20,11 @@
       left: 50%;
       margin-left: -1rem;
     }
+    .guide-hand{
+      position: absolute;
+      bottom: .7rem;
+      left: 63%;
+    }
   }
   .count-down-title {
     width: 100%;
@@ -39,4 +44,21 @@
     position: absolute;
     top: 2.2rem;
   }
+}
+@keyframes shake {
+  from, to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-0.12rem, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: translate3d(0.12rem, 0, 0);
+  }
+}
+
+.shake {
+  animation: shake 4s infinite ease;
 }

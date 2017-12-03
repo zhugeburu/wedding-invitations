@@ -20,6 +20,7 @@ const map = require('./images/map.png');
 const video = require('./images/video.png');
 const weibo = require('./images/weibo.png');
 const photo = require('./images/photo.png');
+const hand = require('./images/hand1.svg');
 
 const count1Img = require('./images/count-1.png');
 const count2Img = require('./images/count-2.png');
@@ -29,6 +30,7 @@ const backImg = require('./images/back.png');
 
 const audioMp3 = require('./audio/duang.mp3');
 const audioOgg = require('./audio/duang.ogg');
+import {T} from 'react-toast-mobile';
 
 var desRadioPlayed = false
 
@@ -106,7 +108,8 @@ export default class Desktop extends Component {
         super(props);
         this.state = {
             videoShow: false,
-            blessShow: false
+            blessShow: false,
+            handShow: false
         }
     }
 
@@ -149,6 +152,18 @@ export default class Desktop extends Component {
         autoPlay('desktop-audio');
         desRadioPlayed = true
       }
+      var that = this
+      this.setState({
+        handShow: true
+      });
+      setTimeout(()=> {
+        T.notify('App图标都可以点击哦!');
+      }, 3000);
+      setTimeout(()=> {
+        this.setState({
+          handShow: false
+        });
+      }, 7000);
     }
 
     render() {
@@ -172,18 +187,20 @@ export default class Desktop extends Component {
                         <img src={video} className="top-icon video-icon"/>
                     </div>
 
-
+                    {this.state.handShow ? <img className="guide-hand guide-rotate" src={hand}/>
+                      : ''
+                    }
 
                     <div className="white-bottom">
                       {/*下部热点区*/}
                       <BottomHotSpot count={2} left="-0.1rem" animateType={2} index='1' toUrl={'/dialing'}/>
-                      <BottomHotSpot count={1} left="1.66rem" animateType={2} index='2' toUrl={'/wechatbar'}/>
-                      <BottomHotSpot count={3} left="3.46rem" animateType={1} index='3' toUrl={'/photograph'}/>
-                      <BottomHotSpot count={1} left="5.24rem" index='4' toUrl={'/map'}/>
+                      <BottomHotSpot count={2} left="1.66rem" animateType={2} index='2' toUrl={'/wechatbar'}/>
+                      <BottomHotSpot count={1} left="3.46rem" animateType={1} index='4' toUrl={'/map'}/>
+                      <BottomHotSpot count={1} left="5.24rem" index='3' toUrl={'/photograph'}/>
                       <img src={phone} className="bottom-icon"/>
                       <img src={wechat} className="bottom-icon"/>
-                      <img src={didi} className="bottom-icon"/>
                       <img src={map} className="bottom-icon"/>
+                      <img src={didi} className="bottom-icon"/>
                     </div>
                 </div>
                 <audio className="hidden" id="desktop-audio">
