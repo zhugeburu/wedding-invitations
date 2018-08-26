@@ -45,6 +45,6 @@ app.use(history({
 app.use('/public', express.static(__dirname + '/dist'));
 app.use('/asset', express.static(__dirname + '/src/asset'));
 
-app.listen(80, function () {
-  console.log('Listening at http://localhost:80');
+app.listen(8082, function () {
+  console.log('Listening at http://localhost:8082');
 })

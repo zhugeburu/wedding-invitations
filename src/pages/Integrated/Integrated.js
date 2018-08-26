@@ -67,9 +67,9 @@ export default class Integrated extends Component {
                     <Back position={"integrated-back"}/>
                     <img src={whiteCircleImg} className="white-circle"/>
                     <div className="text-content">
-                        <p>各位坑友们：</p>
-                        <p>诚挚地邀请您于2017年12月17日，星期日，11:00参加陈钦辉与项璐露的结婚典礼。</p>
-                        <p>友情提醒：大红包带好，地点：湖州仁皇山花园大酒店，点击地图APP可查看</p>
+                        <p>各位朋友们：</p>
+                        <p>诚挚地邀请您于2018年10月20日，星期六，18:00参加马威与蒋黙晗的结婚典礼。</p>
+                        <p>婚宴地点：江苏省海安市年年有余大酒店</p>
                     </div>
                 </div>
             </div>
