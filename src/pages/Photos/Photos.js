@@ -31,7 +31,7 @@ export default class Photos extends Component {
             //当前显示第几张照片
             currentIndex: 0,
             //每5S自动切换图片，如果手动切换了图片，则重置时间
-            waitTime: 3,
+            waitTime: 0,
             //动画向左还是向右边
             animate: 'photos-left'
         }

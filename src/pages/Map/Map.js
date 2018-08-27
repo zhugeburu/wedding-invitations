@@ -62,7 +62,7 @@ export default class Map extends Component {
         /*信息框*/
         var infoWindow = new BMapLib.SearchInfoWindow(map, "2018年10月20日恭候各位光临", {
             title: title, //标题
-            width: 200, //宽度
+            width: 130, //宽度
             height: 20, //高度
             panel: "panel", //检索结果面板
             enableAutoPan: true, //自动平移
