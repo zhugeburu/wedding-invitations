@@ -10,7 +10,7 @@ import {autoPlay} from 'util/audioAutoPlay'
 import Bless from '../../components/Bless/Bless';
 import BgImg from '../../components/BgImg/BgImg';
 
-const bgImg = require('../../asset/images/photos/desktop-bg.jpg');
+const bgImg = require('../../asset/images/photos/desktop-bg1.jpg');
 
 const phone = require('./images/phone.png');
 const wechat = require('./images/wechat.png');
