@@ -17,11 +17,11 @@ const photos = [
     require('../../asset/images/phone-photos/4.jpg'),
     require('../../asset/images/phone-photos/5.jpg'),
     require('../../asset/images/phone-photos/6.jpg'),
-    //require('../../asset/images/phone-photos/7.jpg'),
-    //require('../../asset/images/phone-photos/8.jpg'),
-    //require('../../asset/images/phone-photos/9.jpg'),
-    //require('../../asset/images/phone-photos/10.jpg'),
-    //require('../../asset/images/phone-photos/11.jpg')
+    require('../../asset/images/phone-photos/7.jpg'),
+    require('../../asset/images/phone-photos/8.jpg'),
+    require('../../asset/images/phone-photos/9.jpg'),
+    require('../../asset/images/phone-photos/10.jpg'),
+    require('../../asset/images/phone-photos/11.jpg')
 ]
 
 export default class Photos extends Component {
