@@ -21,7 +21,8 @@ const photos = [
     require('../../asset/images/phone-photos/8.jpg'),
     require('../../asset/images/phone-photos/9.jpg'),
     require('../../asset/images/phone-photos/10.jpg'),
-    require('../../asset/images/phone-photos/11.jpg')
+    require('../../asset/images/phone-photos/11.jpg'),
+    require('../../asset/images/phone-photos/12.jpg')
 ]
 
 export default class Photos extends Component {
