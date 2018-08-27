@@ -158,8 +158,8 @@ export default class Desktop extends Component {
                         <TopHotSpot left="3.7rem" bottomText={'相册'} click={()=>this._redirectToUrl('/photos')}/>
                         <TopHotSpot left="5.55rem" bottomText={'视频'} click={()=>this._openVideo()}/>
                         <div className="top-icon data-icon">
-                        <span className='day'>星期日</span>
-                        <span className='num'>17</span>
+                        <span className='day'>星期六</span>
+                        <span className='num'>20</span>
                       </div>
                         <img src={weibo} className="top-icon"/>
                         <img src={photo} className="top-icon"/>
