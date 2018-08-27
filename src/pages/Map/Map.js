@@ -7,7 +7,7 @@ import './Map.scss';
 import {browserHistory} from 'react-router';
 
 const hertImg = require('./images/hert.png');
-const closeImg = require('./images/close.png');
+const closeImg = require('./images/close-up.png');
 export default class Map extends Component {
     constructor(props) {
         super(props);
@@ -60,10 +60,10 @@ export default class Map extends Component {
         map.addOverlay(marker);              // 将标注添加到地图中
 
         /*信息框*/
-        var infoWindow = new BMapLib.SearchInfoWindow(map, "恭候各位光临", {
+        var infoWindow = new BMapLib.SearchInfoWindow(map, "2018年10月20日恭候各位光临", {
             title: title, //标题
-            width: 290, //宽度
-            height: 40, //高度
+            width: 200, //宽度
+            height: 20, //高度
             panel: "panel", //检索结果面板
             enableAutoPan: true, //自动平移
             searchTypes: []
