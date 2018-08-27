@@ -23,8 +23,8 @@ class Bless extends DB {
 
   list(req, res) {
     super.list({
-      pageSize: req.query.pageSize,
-      pageNum: req.query.pageNum
+      pageSize: parseInt(req.query.pageSize),
+      pageNum: parseInt(req.query.pageNum)
     }).then(function(result) {
       res.json({
         code: 200,
