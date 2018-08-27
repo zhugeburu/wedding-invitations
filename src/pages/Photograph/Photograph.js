@@ -5,11 +5,11 @@ import './Photograph.scss';
 import {browserHistory} from 'react-router';
 import {autoPlay} from 'util/audioAutoPlay'
 
-const bgImg = require('./images/fg-two.jpg');
+const bgImg = require('./images/umbrella.jpg');
 const borderImg = require('./images/photo-border.png');
 const blackWhiteImg = require('./images/black-white.png');
 const blackImg = require('./images/black.jpg');
-const weddingImg = require('./images/wedding.png');
+const weddingImg = require('./images/married-graphic.png');
 const loveImg = require('./images/love-start.png');
 import  Back from 'components/Back/Back';
 
