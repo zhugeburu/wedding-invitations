@@ -190,7 +190,7 @@ export default class Desktop extends Component {
                     <div className='video'>
                         <img src={backImg} className="back" onClick={()=>this._closeVideo()}/>
                         <img src={closeImg} className="close" onClick={()=>this._closeVideo()}/>
-                        <iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=a0500oiudqk&tiny=0&auto=0" allowfullscreen></iframe>
+                        <iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=m0022l3cqd6&tiny=0&auto=0" allowfullscreen></iframe>
                     </div>
                     :
                     ''
