@@ -50,3 +50,4 @@ Temporary Items
 cache/*
 /node_modules
 /wechat-share/*
+/dist

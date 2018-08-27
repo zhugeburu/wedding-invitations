@@ -8,7 +8,7 @@ import Back from 'components/Back/Back';
 import Bless from 'components/Bless/Bless';
 import BgImg from '../../components/BgImg/BgImg';
 
-const bgImg = require('./images/9icon.jpg');
+const bgImg = require('./images/black_and_white.jpg');
 
 const circle1Img = require('./images/circle-1.png');
 const circle2Img = require('./images/circle-2.png');

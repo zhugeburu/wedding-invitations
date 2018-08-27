@@ -75,6 +75,7 @@
     "jssha": "1.6.0",
     "moment": "^2.19.2",
     "mongodb": "^2.2.33",
+    "node-gyp": "^3.8.0",
     "react": "^15.2.1",
     "react-addons-css-transition-group": "^15.4.1",
     "react-dom": "^15.2.1",

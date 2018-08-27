@@ -28,7 +28,7 @@ export default class Dialing extends Component {
         this.audioTimer = setTimeout(()=> {
             autoPlay('dialing-audio');
             document.getElementById('dialing-audio').play();
-        }, 100);
+        }, 500);
     }
 
     componentWillUnmount() {
@@ -43,11 +43,11 @@ export default class Dialing extends Component {
         return (
             <div className="full-page dialing-page">
               <img src={phoneTop} alt="" className='phone-top'/>
-                <a className="dialing-item dialing-item-1" href="tel:18767104460">
+                <a className="dialing-item dialing-item-1" href="tel:17682342423">
                     <img src={itemImg}/>
                     <p>新郎</p>
                 </a>
-                <a className="dialing-item dialing-item-2" href="tel:18767138044">
+                <a className="dialing-item dialing-item-2" href="tel:17682344647">
                     <img src={itemImg}/>
                     <p>新娘</p>
                 </a>
